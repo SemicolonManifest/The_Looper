@@ -3,12 +3,12 @@ class Exercise{
 
     private string $name;
     private int $status;
-    private array $questions;
+    private array $fields;
 
-    public function __construct($name, $status, $questions=[]){
+    public function __construct(string $name,int $status,array $fields){
         $this->name = $name;
         $this->status = $status;
-        $this->questions = $questions;
+        $this->fields = $fields;
     }
 
 }
