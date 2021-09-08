@@ -1,0 +1,25 @@
+.button.answering {
+  background-color: $answering;
+  border-color: $answering;
+}
+
+.button.managing {
+  background-color: $managing;
+  border-color: $managing;
+}
+
+.button.results {
+  background-color: $results;
+  border-color: $results;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  border-radius: .4rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+

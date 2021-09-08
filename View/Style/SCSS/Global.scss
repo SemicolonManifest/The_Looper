@@ -1,7 +1,26 @@
+
+
+@import "Color";
 @import "Header";
+@import "Button";
 
 
 
 body {
   margin: 0;
+  font-family:'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.row {
+  display: flex;
+  margin-top: 2rem;
+  max-width: 112.0rem;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+div.column{
+  width: 366px;
+  margin-left: 40px;
 }
