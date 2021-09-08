@@ -14,16 +14,12 @@
 </head>
 <body>
 <!-- HEADER
-<?= $header; ?>
  /HEADER -->
 
 <!-- Page Content -->
-<div class="contentArea">
     <?= $contenu; ?>
-</div>
 <!-- /.container -->
 <!-- FOOTER
-<?= $footer; ?>
  /FOOTER -->
 
 </body>
