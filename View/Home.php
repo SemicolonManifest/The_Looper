@@ -1,6 +1,5 @@
 <?php
 ob_start();
-include_once "Components/Header/Home.php"
 ?>
 
 
@@ -20,7 +19,7 @@ include_once "Components/Header/Home.php"
 
 
 <?php
-
-$contenu = ob_get_clean(); // stocks la page dans la variable
+$headerPath = "Components/Header/Home.php";
+$contenu = ob_get_clean();
 
 require "Layout.php";

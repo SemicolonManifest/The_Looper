@@ -1,5 +1,5 @@
 <?php
-//require "View\Components\Header.php";
+require_once $headerPath;
 //require "View\Components\Footer.php";
 ?>
 
@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="/View/Style/CSS/Global.css">
 </head>
 <body>
-<!-- HEADER
- /HEADER -->
+<!-- HEADER -->
+    <?= $header; ?>
+<!--  /HEADER -->
 
 <!-- Page Content -->
     <?= $contenu; ?>
