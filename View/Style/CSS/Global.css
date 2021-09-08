@@ -1,5 +1,67 @@
+header.dashboard {
+  background: #9b4dca;
+}
+
+header.dashboard .container {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+}
+
+#LogoDashboard {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+header.dashboard .container h1 {
+  letter-spacing: 1.1rem;
+  font-weight: 300;
+  padding-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.button.answering {
+  background-color: #9b4dca;
+  border-color: #9b4dca;
+}
+
+.button.managing {
+  background-color: #e0a458;
+  border-color: #e0a458;
+}
+
+.button.results {
+  background-color: #419d78;
+  border-color: #419d78;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 0.4rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.row {
+  display: flex;
+  margin-top: 2rem;
+  max-width: 112rem;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+div.column {
+  width: 366px;
+  margin-left: 40px;
 }
 
 /*# sourceMappingURL=Global.css.map */

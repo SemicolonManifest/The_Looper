@@ -1,6 +1,6 @@
 <?php
-require "View\Components\Header.php";
-require "View\Components\Footer.php";
+//require "View\Components\Header.php";
+//require "View\Components\Footer.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,21 +10,17 @@ require "View\Components\Footer.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/View/Style/CSS/Global_style.css">
+    <link rel="stylesheet" href="/View/Style/CSS/Global.css">
 </head>
 <body>
-<!-- HEADER -->
-<?= $header; ?>
-<!-- /HEADER -->
+<!-- HEADER
+ /HEADER -->
 
 <!-- Page Content -->
-<div class="contentArea">
     <?= $contenu; ?>
-</div>
 <!-- /.container -->
-<!-- FOOTER -->
-<?= $footer; ?>
-<!-- /FOOTER -->
+<!-- FOOTER
+ /FOOTER -->
 
 </body>
 </html>
