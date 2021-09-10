@@ -2,10 +2,20 @@ header.dashboard {
   background: #9b4dca;
 }
 
+header.take {
+  background: #9b4dca;
+  height: 50px;
+}
+
 header.dashboard .container {
   text-align: center;
   font-size: 3rem;
   color: white;
+}
+
+#Logo {
+  height: 50px;
+  margin-left: 150px;
 }
 
 #LogoDashboard {
