@@ -45,6 +45,10 @@ header.dashboard .container h1 {
   display: block;
 }
 
+.button:hover {
+  background-color: #606c76;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
