@@ -7,18 +7,44 @@
 body {
   margin: 0;
   font-family:'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .row {
   display: flex;
+  flex-direction: row;
   margin-top: 2rem;
-  max-width: 112.0rem;
   width: 100%;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+
 }
 
+
+
 div.column{
-  width: 366px;
-  margin-left: 40px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.text {
+  color: $text;
+  font-size: 1.6em;
+}
+
+.embed {
+  background-color: #eee;
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+
+.button-container .answering.button {
+  margin-bottom: 10px;
 }
