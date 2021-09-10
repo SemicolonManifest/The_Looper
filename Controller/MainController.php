@@ -15,7 +15,7 @@ class mainController
         $this->takeController = new TakeController();
     }
 
-    /
+
     /**
      * @return ExerciseController
      */
