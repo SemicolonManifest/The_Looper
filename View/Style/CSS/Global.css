@@ -7,6 +7,16 @@ header.take {
   height: 50px;
 }
 
+header.results {
+  background: #419d78;
+  height: 50px;
+}
+
+header.managing {
+  background: #e0a458;
+  height: 50px;
+}
+
 header.dashboard .container {
   text-align: center;
   font-size: 3rem;
