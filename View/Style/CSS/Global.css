@@ -2,10 +2,20 @@ header.dashboard {
   background: #9b4dca;
 }
 
+header.take {
+  background: #9b4dca;
+  height: 50px;
+}
+
 header.dashboard .container {
   text-align: center;
   font-size: 3rem;
   color: white;
+}
+
+#Logo {
+  height: 50px;
+  margin-left: 150px;
 }
 
 #LogoDashboard {
@@ -37,7 +47,8 @@ header.dashboard .container h1 {
 }
 
 .button {
-  width: 100%;
+  margin: auto;
+  width: 90%;
   padding: 10px;
   border-radius: 0.4rem;
   color: white;
@@ -52,20 +63,45 @@ header.dashboard .container h1 {
 body {
   margin: 0;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .row {
   display: flex;
+  flex-direction: row;
   margin-top: 2rem;
-  max-width: 112rem;
   width: 100%;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
 }
 
 div.column {
-  width: 366px;
-  margin-left: 40px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.text {
+  color: #606c76;
+  font-size: 1.6em;
+}
+
+.embed {
+  background-color: #eee;
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+
+.button-container .answering.button {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=Global.css.map */
