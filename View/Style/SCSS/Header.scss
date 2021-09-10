@@ -2,10 +2,26 @@ header.dashboard{
   background: $answering;
 }
 
+header.take{
+  background: $answering;
+  height: 50px;
+}
+
+
+
+
 header.dashboard .container {
   text-align: center;
   font-size: 3rem;
   color: white;
+}
+
+
+
+
+#Logo{
+  height: 50px;
+  margin-left: 150px;
 }
 
 #LogoDashboard{
