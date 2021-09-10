@@ -25,6 +25,10 @@ body {
 
 }
 
+.container {
+  margin: auto;
+  width: 90%;
+}
 
 
 div.column{
@@ -40,7 +44,7 @@ div.column{
 
 .embed {
   background-color: #eee;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: auto;
 }

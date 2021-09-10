@@ -92,6 +92,11 @@ body {
   }
 }
 
+.container {
+  margin: auto;
+  width: 90%;
+}
+
 div.column {
   display: flex;
   width: 100%;
@@ -105,7 +110,7 @@ div.column {
 
 .embed {
   background-color: #eee;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: auto;
 }
