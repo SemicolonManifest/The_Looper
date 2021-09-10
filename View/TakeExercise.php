@@ -6,7 +6,7 @@ ob_start();
             <div class="column">
                 <div class="embed">
                     <p class="text">name exercise</p>
-                    <div class="button-container"><a class="answering button">TAKE IT</a></div>
+                    <div class="button-container"><a class="answering button" href="/exercises/IDExercise/fulfillments/new">TAKE IT</a></div>
                 </div>
             </div>
         </section>
