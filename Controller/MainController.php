@@ -1,5 +1,10 @@
 <?php
 
+require_once "Controller/AnswerController.php";
+require_once "Controller/ExerciseController.php";
+require_once "Controller/FieldController.php";
+require_once "Controller/TakeController.php";
+
 class mainController
 {
     private ExerciseController $exerciseController;
@@ -16,36 +21,8 @@ class mainController
     }
 
 
-    /**
-     * @return ExerciseController
-     */
-    public function getExerciseController(): ExerciseController
-    {
-        return $this->exerciseController;
-    }
-
-    /**
-     * @return FieldController
-     */
-    public function getFieldController(): FieldController
-    {
-        return $this->fieldController;
-    }
-
-    /**
-     * @return AnswerController
-     */
-    public function getAnswerController(): AnswerController
-    {
-        return $this->answerController;
-    }
-
-    /**
-     * @return TakeController
-     */
-    public function getTakeController(): TakeController
-    {
-        return $this->takeController;
+    public function creatExercise(){
+        $this->exerciseController->create($_POST['title']);
     }
 
 

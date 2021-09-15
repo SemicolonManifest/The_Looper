@@ -67,15 +67,15 @@ class DbConnector
     /**
      * @param $query - The SQL query
      * @param array $params - The parameters
-     * @return array|null
+     * @return string
      * @throws Exception - SQL exceptions
      */
     public function insert($query, $params = []) {
         $DB = $this->getPDO();
         try {
-            $statement = $this->DB->prepare($query);     //Préparer la requête
+            $statement = $DB->prepare($query);     //Préparer la requête
             $statement->execute($params);       //Exécuter la requête
-            return $this->DB->lastInsertId();
+            return $DB->lastInsertId();
         } catch (PDOException $e) {
             error_log($e->getMessage());
             return null;

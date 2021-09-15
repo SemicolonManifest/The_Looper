@@ -1,5 +1,5 @@
 <?php
-
+require_once "Model/Exercise.php";
 class ExerciseController
 {
 
@@ -7,9 +7,11 @@ class ExerciseController
 
     }
 
-    public function create(){
-         $title = $_POST['title'];
-         $res = new Exercise($title).create();
+    public function create($title){
+
+         $exercise = new Exercise($title);
+         $exercise->create();
+
     }
 
 }
