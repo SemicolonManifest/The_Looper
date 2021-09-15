@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  color: $text;
   font-family:'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   display: flex;
   justify-content: center;
@@ -38,9 +39,16 @@ div.column{
   flex-direction: column;
 }
 
-.text {
-  color: $text;
-  font-size: 1.6em;
+h1 {
+  font-size: 4.6rem;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: -.1rem;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
 }
 
 .embed {
@@ -52,4 +60,9 @@ div.column{
 
 .button-container .answering.button {
   margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }

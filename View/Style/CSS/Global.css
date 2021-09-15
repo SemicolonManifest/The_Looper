@@ -65,18 +65,42 @@ header.dashboard .container h1 {
   display: block;
 }
 
+input.button {
+  margin: 0;
+  width: 171px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #9b4dca;
+  border: 0 solid #9b4dca;
+  cursor: pointer;
+}
+
 .button:hover {
   background-color: #606c76;
 }
 
 #exercise_title {
-  width: 90%;
+  border: 0.1rem solid #d1d1d1;
   border-radius: 0.4rem;
-  height: 25px;
+  box-shadow: none;
+  box-sizing: inherit;
+  height: 15px;
+  padding: 0.6rem 1rem;
+  width: 95%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
 }
 
 body {
   margin: 0;
+  color: #606c76;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   display: flex;
   justify-content: center;
@@ -109,9 +133,16 @@ div.column {
   flex-direction: column;
 }
 
-.text {
-  color: #606c76;
-  font-size: 1.6em;
+h1 {
+  font-size: 4.6rem;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: -0.1rem;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
 }
 
 .embed {
@@ -123,6 +154,11 @@ div.column {
 
 .button-container .answering.button {
   margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=Global.css.map */
