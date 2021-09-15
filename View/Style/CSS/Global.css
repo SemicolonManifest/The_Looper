@@ -86,9 +86,9 @@ input.button {
   border-radius: 0.4rem;
   box-shadow: none;
   box-sizing: inherit;
-  height: 15px;
+  height: 2.5rem;
   padding: 0.6rem 1rem;
-  width: 95%;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -100,7 +100,7 @@ input.button {
 
 body {
   margin: 0;
-  color: #606c76;
+  color: #606c76 !important;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   display: flex;
   justify-content: center;
@@ -108,12 +108,11 @@ body {
 }
 
 .row {
-  display: flex;
   flex-direction: row;
+  flex-wrap: nowrap !important;
   margin-top: 2rem;
   width: 100%;
-  text-align: center;
-  justify-content: space-between;
+  text-align: left;
 }
 @media only screen and (max-width: 800px) {
   .row {
@@ -121,16 +120,18 @@ body {
   }
 }
 
-.container {
-  margin: auto;
-  max-width: 112rem;
-  width: 95%;
+.column {
+  display: flex;
+  width: 50% !important;
+  flex-direction: column;
 }
 
-div.column {
-  display: flex;
+.container {
+  margin: 0 auto;
+  max-width: 112rem !important;
+  padding: 0 2rem;
+  position: relative;
   width: 100%;
-  flex-direction: column;
 }
 
 h1 {
