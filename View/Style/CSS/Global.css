@@ -25,7 +25,6 @@ header.dashboard .container {
 
 #Logo {
   height: 50px;
-  margin-left: 150px;
 }
 
 #LogoDashboard {
@@ -70,6 +69,12 @@ header.dashboard .container h1 {
   background-color: #606c76;
 }
 
+#exercise_title {
+  width: 90%;
+  border-radius: 0.4rem;
+  height: 25px;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -94,7 +99,8 @@ body {
 
 .container {
   margin: auto;
-  width: 90%;
+  max-width: 112rem;
+  width: 95%;
 }
 
 div.column {

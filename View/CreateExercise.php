@@ -1,18 +1,17 @@
 <?php
 ob_start();
 ?>
-    <div class="container">
         <h1 class="text">New Exercise</h1>
-        <section class="row">
-            <div class="column">
-                <div>
-                    <label for="exercise_title">Title</label>
-                    <input id="exercise_title" type="text" name="exercise[title]">
-                    <div class="button-container"><a class="answering button" href="/exercises/IDExercise/fulfillments/new">TAKE IT</a></div>
-                </div>
-            </div>
-        </section>
-    </div>
+        <form action="/exercises" method="post">
+        <div class="field">
+            <label for="exercise_title">Title</label>
+            <input id="exercise_title" type="text" name="exercise[title]">
+        </div>
+        <div class="actions">
+            <input type="submit" name="commit" value="Create Exercise" class="answering button">
+        </div>
+        </form>
+
 
 
 <?php

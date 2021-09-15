@@ -2,7 +2,9 @@
 ob_start();
 ?>
     <header class="results">
-        <a><img id="Logo" src="View/Style/Assets/logo.png"></a>
+        <section class="container">
+            <a><img id="Logo" src="View/Style/Assets/logo.png"></a>
+        </section>
     </header>
 
 <?php

@@ -17,7 +17,10 @@ require_once $headerPath;
 <!--  /HEADER -->
 
 <!-- Page Content -->
+
+<main class="container">
     <?= $contenu; ?>
+</main>
 <!-- /.container -->
 <!-- FOOTER
  /FOOTER -->
