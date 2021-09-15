@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-    <div class="container dashboard">
+    <div class="container">
         <section class="row">
             <div class="column">
                 <div class="embed">

@@ -7,6 +7,16 @@ header.take{
   height: 50px;
 }
 
+header.results{
+  background: $results;
+  height: 50px;
+}
+
+header.managing{
+  background: $managing;
+  height: 50px;
+}
+
 
 
 
@@ -21,7 +31,6 @@ header.dashboard .container {
 
 #Logo{
   height: 50px;
-  margin-left: 150px;
 }
 
 #LogoDashboard{
