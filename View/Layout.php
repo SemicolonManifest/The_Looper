@@ -10,6 +10,7 @@ require_once $headerPath;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/View/Style/CSS/Global.css">
+    <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- HEADER -->
