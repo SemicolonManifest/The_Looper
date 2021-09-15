@@ -23,8 +23,24 @@
   display: block;
 }
 
+input.button {
+  margin: 0;
+  width: 171px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #9b4dca;
+  border: 0 solid #9b4dca;
+  cursor: pointer;
+}
+
+
+
 .button:hover {
   background-color: $hover;
 }
+
+
 
 
