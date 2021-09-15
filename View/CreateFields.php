@@ -4,7 +4,7 @@ ob_start();
     <div class="row">
         <div class="column">
             <h1 class="text">Fields</h1>
-            <table class="records">
+            <table class="records table">
                 <thead>
                 <tr>
                     <th>Label</th>
@@ -25,11 +25,13 @@ ob_start();
             <h1 class="text">New Fields</h1>
             <form action="/exercises" method="post">
                 <div class="field">
-                    <label for="exercise_title">Title</label>
-                    <input id="exercise_title" type="text" name="exercise[title]">
+                    <label for="field_label">Label</label>
+                    <input class="input" id="field_label" type="text" name="field[label]">
+                    <label for="field_value">Value kind</label>
+                    <input class="input" id="field_value" type="text" name="field[value]">
                 </div>
                 <div class="actions">
-                    <input type="submit" name="commit" value="Create Exercise" class="answering button">
+                    <input type="submit" name="commit" value="Create Field" class="answering button">
                 </div>
             </form>
 
