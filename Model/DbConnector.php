@@ -1,4 +1,8 @@
 <?php
+namespace TheLooper\Model;
+use Exception;
+use PDO;
+use PDOException;
 
 class DbConnector
 {

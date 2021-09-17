@@ -1,3 +1,4 @@
 .idea
-
 Model/.env.php
+vendor
+!vendor/autoload.php
