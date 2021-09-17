@@ -25,8 +25,8 @@ class mainController
         $this->exerciseController->create($_POST['title']);
     }
 
-    public function showAllExercise(){
-        $this->exerciseController->showAll();
+    public function showAllExercises(){
+        $exercises = $this->exerciseController->showAll();
         include_once "View/TakeExercise.php";
     }
 

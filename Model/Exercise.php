@@ -27,7 +27,7 @@ class Exercise
 
     public function showAll()
     {
-        $this->DBConnector->selectMany("SELECT title FROM exercises;", []);
+        return $this->DBConnector->selectMany("SELECT id, title FROM exercises;", []);
     }
 
 
