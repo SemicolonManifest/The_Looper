@@ -26,7 +26,7 @@ class mainController
     }
 
     public function showHome(){
-
+        include_once "View/Home.php";
     }
 
 
