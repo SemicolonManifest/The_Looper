@@ -4,10 +4,14 @@ ob_start();
     <div class="container">
         <section class="row">
             <div class="column">
+                <?php foreach ($exercises as $exercise ){ ?>
                 <div class="embed">
-                    <p class="text">name exercise</p>
-                    <div class="button-container"><a class="answering button" href="/exercises/IDExercise/fulfillments/new">TAKE IT</a></div>
+                    <p class="text"><?= $exercise['title'] ?></p>
+                    <div class="button-container">
+                        <a class="answering button" href="?action=showExercise&id=<?= $exercise['id'] ?>">TAKE IT</a>
+                    </div>
                 </div>
+                <?php } ?>
             </div>
         </section>
     </div>
