@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  color: $text;
+  color: $text !important;
   font-family:'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   display: flex;
   justify-content: center;
@@ -14,30 +14,33 @@ body {
 }
 
 .row {
-  display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  flex-wrap: nowrap !important;
   width: 100%;
-  text-align: center;
-  justify-content: space-between;
+  margin: auto !important;
+  text-align: left;
   @media only screen and (max-width: 800px) {
     flex-direction: column;
   }
 
 }
 
-.container {
-  margin: auto;
-  max-width: 112.0rem;
-  width: 95%;
-}
-
-
-div.column{
+.column{
   display: flex;
-  width: 100%;
+  width: 50% !important;
   flex-direction: column;
 }
+
+.container {
+  margin: 0 auto;
+  max-width: 112.0rem !important;
+  padding: 0 2.0rem;
+  position: relative;
+  width: 100%;
+}
+
+
+
 
 h1 {
   font-size: 4.6rem;
