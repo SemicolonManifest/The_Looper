@@ -9,6 +9,9 @@ switch ($_GET['action']){
     case 'createExercise':
         $mainController->createExercise();
         break;
+    case 'showAllExercise':
+        $mainController->showAllExercise();
+        break;
     default:
         $mainController->showHome();
 }
