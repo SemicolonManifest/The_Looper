@@ -1,9 +1,7 @@
 <?php
+namespace TheLooper\Controller;
 
-require_once "Controller/AnswerController.php";
-require_once "Controller/ExerciseController.php";
-require_once "Controller/FieldController.php";
-require_once "Controller/TakeController.php";
+
 
 class mainController
 {

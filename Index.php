@@ -1,8 +1,11 @@
 <?php
+namespace TheLooper;
+use TheLooper\Controller\mainController;
+
 session_start();
 date_default_timezone_set('Europe/Zurich');
+require_once 'vendor/autoload.php';
 
-require_once 'Controller/MainController.php';
 $mainController = new mainController();
 
 if (isset($_GET['action'])) {

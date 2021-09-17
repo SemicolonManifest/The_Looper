@@ -1,4 +1,5 @@
 <?php
+namespace TheLooper\Model;
 
 class take
 {

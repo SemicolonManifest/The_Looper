@@ -1,5 +1,6 @@
 <?php
-require_once "Model/Exercise.php";
+namespace TheLooper\Controller;
+use TheLooper\Model\Exercise;
 class ExerciseController
 {
 

@@ -1,4 +1,6 @@
 <?php
+namespace TheLooper\Model;
+
 require_once "Model/DbConnector.php";
 
 class Exercise

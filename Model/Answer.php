@@ -1,5 +1,5 @@
 <?php
-
+namespace TheLooper\Model;
 class Answer
 {
     private string $answer;
