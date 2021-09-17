@@ -10,7 +10,7 @@ class Exercise
     private array $fields;
     private DbConnector $DBConnector;
 
-    public function __construct(string $title, int $ID = -1, int $status = -1, array $fields = [])
+    public function __construct(string $title = "", int $ID = -1, int $status = -1, array $fields = [])
     {
         $this->title = $title;
         $this->fields = $fields;
@@ -23,6 +23,11 @@ class Exercise
     public function create()
     {
         $this->DBConnector->insert("INSERT INTO exercises (title)  values (:title);", ['title' => $this->title]);
+    }
+
+    public function showAll()
+    {
+        return $this->DBConnector->selectMany("SELECT id, title FROM exercises;", []);
     }
 
 

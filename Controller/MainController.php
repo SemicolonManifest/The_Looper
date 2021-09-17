@@ -25,6 +25,11 @@ class mainController
         $this->exerciseController->create($_POST['title']);
     }
 
+    public function showAllExercises(){
+        $exercises = $this->exerciseController->showAll();
+        include_once "View/TakeExercise.php";
+    }
+
     public function showHome(){
         include_once "View/Home.php";
     }

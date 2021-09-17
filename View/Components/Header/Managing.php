@@ -3,7 +3,7 @@ ob_start();
 ?>
     <header class="managing">
         <section class="container">
-            <a><img id="Logo" src="View/Style/Assets/logo.png"></a>
+            <a href="?"><img id="Logo" src="View/Style/Assets/logo.png"></a>
         </section>
     </header>
 
