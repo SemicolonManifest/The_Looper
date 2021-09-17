@@ -1,7 +1,6 @@
 <?php
 ob_start();
 ?>
-    <div class="container">
         <section class="row">
             <div class="column">
                 <?php foreach ($exercises as $exercise ){ ?>
@@ -14,7 +13,6 @@ ob_start();
                 <?php } ?>
             </div>
         </section>
-    </div>
 
 
 <?php

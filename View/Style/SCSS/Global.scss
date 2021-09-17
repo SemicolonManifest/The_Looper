@@ -16,6 +16,7 @@ body {
 .row {
   flex-direction: row;
   flex-wrap: nowrap !important;
+  justify-content: center;
   width: 100%;
   margin: auto !important;
   text-align: left;
@@ -58,7 +59,8 @@ label {
   background-color: #eee;
   width: 100%;
   height: auto;
-  margin: auto;
+  text-align: center;
+  margin-top: 25px;
 }
 
 .button-container .answering.button {
