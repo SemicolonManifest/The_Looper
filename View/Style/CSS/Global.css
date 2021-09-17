@@ -66,6 +66,11 @@ header.dashboard .container h1 {
   text-align: center;
 }
 
+.button.column {
+  width: 30% !important;
+  margin-top: 20px;
+}
+
 input.button {
   margin: 0;
   width: 171px;
