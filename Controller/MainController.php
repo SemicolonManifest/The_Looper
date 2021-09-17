@@ -21,8 +21,12 @@ class mainController
     }
 
 
-    public function creatExercise(){
+    public function createExercise(){
         $this->exerciseController->create($_POST['title']);
+    }
+
+    public function showHome(){
+
     }
 
 
