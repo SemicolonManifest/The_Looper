@@ -14,4 +14,11 @@ class ExerciseController
 
     }
 
+    public function showAll(){
+
+         $exercise = new Exercise();
+         $exercise->showAll();
+
+    }
+
 }
