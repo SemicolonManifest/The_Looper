@@ -1,0 +1,1 @@
+INSERT INTO exercises (id,title)  values (NULL,"L'examen2") ;
