@@ -56,12 +56,12 @@ class DbConnector
 
 
     public function selectMany($query, $params = []) {
-        return select($query, $params, true);
+        return $this->select($query, $params, true);
     }
 
 
     public function selectOne($query, $params = []) {
-        return select($query, $params, false);
+        return $this->select($query, $params, false);
     }
 
     /**
