@@ -4,25 +4,17 @@ use Exception;
 use PDO;
 use PDOException;
 
+
 class DbConnector
 {
 
-
-    private $PDO_DSN;
-    private $PDO_USERNAME;
-    private $PDO_PASSWORD;
-
-    public function __construct($PDO_DSN, $PDO_USERNAME, $PDO_PASSWORD){
-        $this->PDO_DSN = $PDO_DSN;
-        $this->PDO_USERNAME = $PDO_USERNAME;
-        $this->PDO_PASSWORD = $PDO_PASSWORD;
-    }
-
-    private function getPDO(){
+    private static function getPDO(){
         
         $DB = null;
+
         try{
-            $DB = new PDO($this->PDO_DSN,$this->PDO_USERNAME,$this->PDO_PASSWORD);
+            require __DIR__.'/.env.php';
+            $DB = new PDO($DSN,$USERNAME,$PASSWORD);
         }catch(Exception $exception){
             throw new Exception("An exception has occurred when trying to connect to the database!");
         }
@@ -38,9 +30,9 @@ class DbConnector
      * @param $multirecord - Bool - Do we want multiple raws ?
      * @return array|null
      */
-    public function select($query, $params, $multirecord) {
+    static function select($query, $params, $multirecord) {
 
-        $DB = $this->getPDO();
+        $DB = self::getPDO();
         try {
             $statement = $DB->prepare($query);     //Préparer la requête
             $statement->execute($params);       //Exécuter la requête
@@ -59,13 +51,13 @@ class DbConnector
     }
 
 
-    public function selectMany($query, $params = []) {
-        return $this->select($query, $params, true);
+    static function selectMany($query, $params = []) {
+        return self::select($query, $params, true);
     }
 
 
-    public function selectOne($query, $params = []) {
-        return $this->select($query, $params, false);
+    static function selectOne($query, $params = []) {
+        return self::select($query, $params, false);
     }
 
     /**
@@ -74,8 +66,8 @@ class DbConnector
      * @return string
      * @throws Exception - SQL exceptions
      */
-    public function insert($query, $params = []) {
-        $DB = $this->getPDO();
+    static function insert($query, $params = []) {
+        $DB = self::getPDO();
         try {
             $statement = $DB->prepare($query);     //Préparer la requête
             $statement->execute($params);       //Exécuter la requête
@@ -92,10 +84,10 @@ class DbConnector
      * @param array $params - The parameters
      * @return bool|null
      */
-     public function execute($query, $params = []) {
-        $DB = getPDO();
+    static function execute($query, $params = []) {
+        $DB = self::getPDO();
         try {
-            $statement = $this->DB->prepare($query);     //Préparer la requête
+            $statement = $DB->prepare($query);     //Préparer la requête
             $statement->execute($params);       //Exécuter la requête
             $DB = null;
             return true;
