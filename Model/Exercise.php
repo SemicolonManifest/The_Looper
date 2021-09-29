@@ -52,13 +52,13 @@ class Exercise
 
     static function find(int $id): ?Exercise
     {
-        $res = DbConnector::select("SELECT * FROM exercises WHERE id = :id", ['id'=>$id], false);
+        $res = DbConnector::select("SELECT * FROM exercises WHERE id = :id", ['id' => $id], false);
 
-        if(!$res){
+        if (!$res) {
             return null;
         }
 
-        return self::make(["id"=>$res["id"], "title"=>$res['title'], "state"=>$res['state']]);
+        return self::make(["id" => $res["id"], "title" => $res['title'], "state" => $res['state']]);
 
     }
 
@@ -66,7 +66,7 @@ class Exercise
     {
         $check = DbConnector::selectOne("SELECT * FROM exercises WHERE title = :title", ['title' => $this->title]);
 
-        if (!empty($check)){
+        if (!empty($check)) {
             return false;
         }
 
@@ -88,5 +88,11 @@ class Exercise
         }
     }
 
+    public function allFields(int $id): array
+    {
+
+        return DBConnector::select("SELECT * FROM fields WHERE exercises_id = :id", ['id' => $id], true);
+
+    }
 
 }
