@@ -4,14 +4,17 @@ use Exception;
 use PDO;
 use PDOException;
 
+
 class DbConnector
 {
 
     private static function getPDO(){
         
         $DB = null;
+
         try{
-            $DB = new PDO($DSN,$USERNAME,$PDO_PASSWORD);
+            require __DIR__.'/.env.php';
+            $DB = new PDO($DSN,$USERNAME,$PASSWORD);
         }catch(Exception $exception){
             throw new Exception("An exception has occurred when trying to connect to the database!");
         }
