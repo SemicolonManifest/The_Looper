@@ -6,7 +6,7 @@ class ExerciseTest extends TestCase
 {
     public function testCreate(): void
     {
-        require_once 'Model/.env.php';
+        require_once dirname(__DIR__,1).'/Model/.env.php';
         $title ="UnitTest";
 
         $dbConnector = new DbConnector($DSN, $USERNAME, $PASSWORD);
