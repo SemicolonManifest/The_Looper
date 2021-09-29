@@ -1,6 +1,21 @@
 <?php
 namespace TheLooper\Model;
-class ExerciseTest
+use PHPUnit\Framework\TestCase;
+
+class ExerciseTest extends TestCase
 {
+    public function testCreate(): void
+    {
+        require_once 'Model/.env.php';
+        $title ="UnitTest";
+
+        $dbConnector = new DbConnector($DSN, $USERNAME, $PASSWORD);
+       $exercise = new Exercise($title);
+       $exerciseId = $exercise->create();
+       $result = $dbConnector->selectOne("select title from exercises where id=:id;",['id'=>$exerciseId]);
+       self::assertEquals($title,$result['title']);
+
+
+    }
 
 }

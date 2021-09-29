@@ -1,8 +1,6 @@
 <?php
 namespace TheLooper\Model;
 
-require_once "Model/DbConnector.php";
-
 class Exercise
 {
 
@@ -24,7 +22,7 @@ class Exercise
 
     public function create()
     {
-        $this->DBConnector->insert("INSERT INTO exercises (title)  values (:title);", ['title' => $this->title]);
+       return $this->DBConnector->insert("INSERT INTO exercises (title)  values (:title);", ['title' => $this->title]);
     }
 
     public function showAll()

@@ -2,3 +2,4 @@
 vendor/
 Model/.env.php
 !vendor/autoload.php
+*.cache
