@@ -22,11 +22,6 @@ class Field
             return false;
         }
 
-        static function make(array $fields): Field
-        {
-            throw new Exception("Not implemented");
-        }
-
         static function all() : array
         {
             throw new Exception("Not implemented");
@@ -35,7 +30,7 @@ class Field
         static function find($id): ?Field
         {
             $res = DbConnector::selectOne("select * from fields where id=:id;",["id"=>$id]);
-            return isset($res['label']) ? Field::make($res) : null ;
+            return isset($res['label']) ? new Field($res['label'],$res['value_kind'],$res['id']) : null ;
         }
 
 
