@@ -88,10 +88,10 @@ class Exercise
         }
     }
 
-    public function allFields(int $id): array
+    public function allFields(int $id)
     {
-
-        return DBConnector::select("SELECT * FROM fields WHERE exercises_id = :id", ['id' => $id], true);
+        //TODO Use Field Class to connect exercise to field
+        $this->fields = DBConnector::select("SELECT * FROM fields WHERE exercises_id = :id", ['id' => $id], true);
 
     }
 
