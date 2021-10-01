@@ -79,3 +79,22 @@ INSERT INTO fields(label, value_kind, exercises_id)
 VALUES ("Pourquoi les humains existent ?", 0, 1),
        ("Comment ça ce fait qu'on ait pas encore de remède ?", 1, 2),
        ("Comment ça peut exister ?", 2, 3);
+
+
+INSERT INTO takes (time_stamp)
+VALUES  ('2021-10-01 10:12:30'),
+		('2021-10-02 10:12:30'),
+		('2021-10-03 10:12:30');
+
+INSERT INTO answers (response, fields_id, takes_id) 
+VALUES  ('parce que', '1', '1'),
+		('woula', '1', '2'),
+		('boomer', '1', '3'),
+		('jsp', '2', '1'),
+		('ok', '2', '2'),
+		('quoi ?', '2', '3'),
+		('null', '3', '1'),
+		('je comprend pas', '3', '2'),
+		('rien pigé', '3', '3');
+
+
