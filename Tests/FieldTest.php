@@ -6,16 +6,13 @@ use PHPUnit\Framework\TestCase;
 class FieldTest extends TestCase
 {
 
-    protected function setUp(): void
+    static function setUpBeforeClass(): void
     {
         $sqlscript = file_get_contents(dirname(__DIR__,1).'/Doc/DB/MPD/MPD.sql');
-        $res = DbConnector::execute($sqlscript);
+        DbConnector::execute($sqlscript);
     }
 
-    public function testCreate(){
-        $field = new Field("Par ce que les grilles pains",FieldValueKind::SINGLE_LINE);
-        $this->assertTrue($field->create());
-    }
+
 
     public function testall(){
         $expectedAmount = 3;
@@ -28,6 +25,11 @@ class FieldTest extends TestCase
     {
         $this->assertInstanceOf(Field::class,Field::find(1));
         $this->assertNull(Field::find(1000));
+    }
+
+    public function testCreate(){
+        $field = new Field("Par ce que les grilles pains",FieldValueKind::SINGLE_LINE,1);
+        $this->assertTrue($field->create());
     }
 
 
