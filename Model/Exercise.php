@@ -20,7 +20,7 @@ class Exercise
 
     public function create(): bool
     {
-        $check = DbConnector::select("SELECT * FROM exercises WHERE title = :title", ['title' => $this->title], false);
+        $check = DbConnector::selectOne("SELECT * FROM exercises WHERE title = :title", ['title' => $this->title]);
 
         if (!empty($check)) {
             return false;
@@ -47,12 +47,12 @@ class Exercise
 
     static function all(): array
     {
-        return DBConnector::select("SELECT id, title FROM exercises;", [], true);
+        return DBConnector::selectMany("SELECT id, title FROM exercises;", []);
     }
 
     static function find(int $id): ?Exercise
     {
-        $res = DbConnector::select("SELECT * FROM exercises WHERE id = :id", ['id' => $id], false);
+        $res = DbConnector::selectOne("SELECT * FROM exercises WHERE id = :id", ['id' => $id]);
 
         if (!$res) {
             return null;
