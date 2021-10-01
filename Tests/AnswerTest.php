@@ -44,7 +44,7 @@ class AnswerTest extends TestCase
         $Answer->response = "newname";
         $this->assertTrue($Answer->save());
         $this->assertEquals("newname",Answer::find(1)->response);
-        $Answer->response = $saveresponse."prout";
+        $Answer->response = $saveresponse;
         $Answer->save();
     }
 
