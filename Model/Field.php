@@ -2,6 +2,7 @@
 namespace TheLooper\Model;
 
 use mysql_xdevapi\Exception;
+use PhpParser\NodeVisitor\FindingVisitor;
 
 class Field
 {
@@ -29,6 +30,12 @@ class Field
         static function all() : array
         {
             throw new Exception("Not implemented");
+        }
+
+        static function find($id): ?Field
+        {
+            $res = DbConnector::selectOne("select * from fields where id=:id;",["id"=>$id]);
+            return isset($res['label']) ? Field::make($res) : null ;
         }
 
 

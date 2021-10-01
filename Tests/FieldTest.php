@@ -24,4 +24,12 @@ class FieldTest extends TestCase
         $this->assertEquals($expectedAmount,$actualAmount);
     }
 
+    public function testFind()
+    {
+        $this->assertInstanceOf(Field::class,Field::find(1));
+        $this->assertNull(Field::find(1000));
+    }
+
+
+
 }
