@@ -1,5 +1,5 @@
 <?php
-
+namespace TheLooper\Model;
 abstract class FieldValueKind
 {
     const SINGLE_LINE = 0;
