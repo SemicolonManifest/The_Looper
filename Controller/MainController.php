@@ -23,6 +23,14 @@ class mainController
         $this->exerciseController->create($_POST['title']);
     }
 
+    public function showCreateField(){
+        include_once "View/CreateFields.php";
+    }
+
+    public function showCreateExercise(){
+        include_once "View/CreateExercise.php";
+    }
+
     public function showAllExercises(){
         $exercises = $this->exerciseController->showAll();
         include_once "View/TakeExercise.php";
