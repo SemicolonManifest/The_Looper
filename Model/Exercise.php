@@ -47,7 +47,7 @@ class Exercise
 
     static function all(): array
     {
-        return DBConnector::selectMany("SELECT id, title FROM exercises;", []);
+        return DBConnector::selectMany("SELECT * FROM exercises;", []);
     }
 
     static function find(int $id): ?Exercise
