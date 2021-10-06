@@ -16,8 +16,8 @@ body {
 .row {
   flex-direction: row;
   flex-wrap: nowrap !important;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  width: calc(100% + 2.0rem);
   margin: auto !important;
   text-align: left;
   @media only screen and (max-width: 800px) {
@@ -26,15 +26,23 @@ body {
 
 }
 
-.column{
-  display: flex;
-  width: 50% !important;
-  flex-direction: column;
+.row .column {
+  display: block;
+  flex: 1 1 auto;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 100%;
+  width: 100%;
 }
+
+td, tr{
+  border-bottom: 0.1rem solid #e1e1e1;
+}
+
 
 .container {
   margin: 0 auto;
-  max-width: 112.0rem !important;
+  max-width: 112.0rem;
   padding: 0 2.0rem;
   position: relative;
   width: 100%;
