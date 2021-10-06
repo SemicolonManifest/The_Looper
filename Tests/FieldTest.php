@@ -76,6 +76,11 @@ class FieldTest extends TestCase
         $this->assertNull(Field::find($id)); // we should not find it back
     }
 
+    public static function tearDownAfterClass() : void
+    {
+        DBConnector::execute("DELETE FROM fields WHERE id = :id", ["id" => "4"]);
+    }
+
 
 
 }
