@@ -10,11 +10,14 @@ $mainController = new mainController();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
-        case 'createExercise':
-            $mainController->createExercise();
-            break;
         case 'showAllExercises':
             $mainController->showAllExercises();
+            break;
+        case 'showCreateExercise':
+            $mainController->showCreateExercise();
+            break;
+        case 'showCreateField':
+            $mainController->showCreateField();
             break;
         default:
             $mainController->showHome();
