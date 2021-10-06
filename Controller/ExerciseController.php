@@ -18,7 +18,7 @@ class ExerciseController
     public function showAll(){
 
          $exercise = new Exercise();
-         return $exercise->showAll();
+         return $exercise->All();
 
     }
 
