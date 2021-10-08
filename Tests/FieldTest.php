@@ -78,7 +78,7 @@ class FieldTest extends TestCase
 
     public static function tearDownAfterClass() : void
     {
-        DBConnector::execute("DELETE FROM fields WHERE id = :id", ["id" => "4"]);
+        DBConnector::execute("DELETE FROM fields WHERE label = :label", ["label" => "Par ce que les grilles pains"]);
     }
 
 
