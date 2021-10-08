@@ -43,6 +43,11 @@ class mainController
         include_once "View/Home.php";
     }
 
+    public function showFulfillExercise()
+    {
+    include_once "View/FulfillExercise.php";
+    }
+
 
 
 }
