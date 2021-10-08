@@ -7,7 +7,7 @@ ob_start();
             <table class="table">
                 <thead>
                 <tr>
-                    <th>title</th>
+                    <th colspan="2">title</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -17,9 +17,11 @@ ob_start();
                         <tr>
                             <td>
                                 <p class="text"><?= $exercise['title'] ?></p>
-                                <i class="fa fa-comment"></i>
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash"></i>
+                            </td>
+                            <td id="iconColumn">
+                                <a class="icon" href="?action=answering&id=<?= $exercise['id'] ?>"><i class="fa fa-comment"></i></a>
+                                <a class="icon" href="?action=manageField&id=<?= $exercise['id'] ?>"><i class="fa fa-edit"></i></a>
+                                <a class="icon" href="?action=delete&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php }
