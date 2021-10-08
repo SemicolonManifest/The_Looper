@@ -49,6 +49,16 @@ class Take
 
     }
 
+    static function where($field,$value): array
+    {
+        $result = DbConnector::selectMany("select * from takes where $field = :value;",["value"=>$value]);
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make(["time_stamp" => $res['time_stamp'], "id" => $res['id']]);
+        }
+        return $return;
+    }
+
     public function delete(): bool
     {
         return self::destroy($this->id);
