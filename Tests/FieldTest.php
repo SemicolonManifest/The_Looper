@@ -58,8 +58,8 @@ class FieldTest extends TestCase
      */
     public function testWhere()
     {
-        $this->assertEquals(1,count(field::where("exercises_id",2)));
-        $this->assertEquals(0,count(field::where("exercises_id",6)));
+        $this->assertEquals(1,count(Field::where("exercises_id",2)));
+        $this->assertEquals(0,count(Field::where("exercises_id",6)));
     }
 
     /**
@@ -74,6 +74,16 @@ class FieldTest extends TestCase
         $id = $field->getId();
         $this->assertTrue(Field::destroy($id)); // expected to succeed
         $this->assertNull(Field::find($id)); // we should not find it back
+    }
+
+    /**
+     * @covers $field->answers()
+     */
+    public function testAnswers()
+    {
+        $this->assertEquals(3,count(Field::find(1)->answers()));
+        $this->assertEquals(3,count(Field::find(2)->answers()));
+        $this->assertEquals(1,count(Field::find(3)->answers()));
     }
 
     public static function tearDownAfterClass() : void

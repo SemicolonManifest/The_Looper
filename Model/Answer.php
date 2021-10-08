@@ -57,6 +57,16 @@ class Answer
 
     }
 
+    static function where($field,$value): array
+    {
+        $result = DbConnector::selectMany("select * from answers where $field = :value;",["value"=>$value]);
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make(["id" => $res["id"], "response" => $res['response'], "field" => $res['fields_id'], "take" => $res['takes_id']]);
+        }
+        return $return;
+    }
+
     public function save(): bool
     {
         $check = DbConnector::selectOne("SELECT * FROM answers WHERE response = :response", ['response' => $this->response]);
@@ -83,14 +93,12 @@ class Answer
         }
     }
 
-    //TODO Add link to field
-
-    public function allTakes(int $id)
+    public function take(): array
     {
-
-        //TODO Use Take Class to connect field to take
-        $this->fields = DBConnector::select("SELECT * FROM fields WHERE answers_id = :id", ['id' => $id], true);
-
+        $take = Take::where("id",$this->take);
+        return $take;
     }
+
+
 
 }
