@@ -93,14 +93,12 @@ class Answer
         }
     }
 
-    //TODO Add link to field
-
-    public function allTakes(int $id)
+    public function take(): array
     {
-
-        //TODO Use Take Class to connect field to take
-        $this->fields = DBConnector::select("SELECT * FROM fields WHERE answers_id = :id", ['id' => $id], true);
-
+        $take = Take::where("id",$this->take);
+        return $take;
     }
+
+
 
 }

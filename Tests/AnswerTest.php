@@ -82,6 +82,16 @@ class AnswerTest extends TestCase
         $this->assertNull(Answer::find($id)); // we should not find it back
     }
 
+    /**
+     * @covers $answer->takes()
+     */
+    public function testFields()
+    {
+        $this->assertEquals(1,count(Answer::find(1)->take()));
+        $this->assertEquals(1,count(Answer::find(2)->take()));
+        $this->assertEquals(1,count(Answer::find(3)->take()));
+    }
+
 
     public static function tearDownAfterClass() : void
     {
