@@ -94,5 +94,11 @@ class Field
         return $this->id;
     }
 
+    public function answers(): array
+    {
+        $answers = Answer::where("fields_id",$this->id);
+        return $answers;
+    }
+
 
 }
