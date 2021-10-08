@@ -87,6 +87,10 @@ input.button {
   background-color: #606c76;
 }
 
+.icon {
+  color: #9b4dca;
+}
+
 .input {
   border: 0.1rem solid #d1d1d1;
   border-radius: 0.4rem;
@@ -102,6 +106,10 @@ input.button {
 .field {
   display: flex;
   flex-direction: column;
+}
+
+#iconColumn {
+  text-align: right;
 }
 
 body {
@@ -136,7 +144,7 @@ body {
   width: 100%;
 }
 
-td, th {
+td, tr {
   border-bottom: 0.1rem solid #e1e1e1;
 }
 
