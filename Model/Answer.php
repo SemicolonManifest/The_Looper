@@ -57,6 +57,16 @@ class Answer
 
     }
 
+    static function where($field,$value): array
+    {
+        $result = DbConnector::selectMany("select * from answers where $field = :value;",["value"=>$value]);
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make(["id" => $res["id"], "response" => $res['response'], "field" => $res['fields_id'], "take" => $res['takes_id']]);
+        }
+        return $return;
+    }
+
     public function save(): bool
     {
         $check = DbConnector::selectOne("SELECT * FROM answers WHERE response = :response", ['response' => $this->response]);
