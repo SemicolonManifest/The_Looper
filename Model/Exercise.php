@@ -7,7 +7,7 @@ class Exercise
 
     public int $id;
     public string $title;
-    public int $state;
+    public int $state = 0;
     public array $fields;
 
     public function __construct(string $title = "", int $id = -1, int $state = -1, array $fields = [])

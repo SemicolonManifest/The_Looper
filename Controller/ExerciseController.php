@@ -12,7 +12,8 @@ class ExerciseController
 
     public function create($title){
 
-         $exercise = new Exercise($title);
+         $exercise = new Exercise();
+         $exercise->title = $title;
          $exercise->create();
 
     }

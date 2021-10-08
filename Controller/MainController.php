@@ -17,11 +17,8 @@ class mainController
     }
 
 
-    public function createExercise(){
-        $this->exerciseController->create($_POST['title']);
-    }
-
     public function showCreateField(){
+        $this->exerciseController->create($_POST['exercise']['title']);
         include_once "View/CreateFields.php";
     }
 
