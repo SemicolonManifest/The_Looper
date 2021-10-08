@@ -21,7 +21,7 @@ ob_start();
                             <td id="iconColumn">
                                 <a class="icon" href="?action=answering&id=<?= $exercise['id'] ?>"><i class="fa fa-comment"></i></a>
                                 <a class="icon" href="?action=manageField&id=<?= $exercise['id'] ?>"><i class="fa fa-edit"></i></a>
-                                <a class="icon" href="?action=delete&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
+                                <a class="icon" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php }
@@ -34,7 +34,7 @@ ob_start();
             <table class="table">
                 <thead>
                 <tr>
-                    <th>title</th>
+                    <th colspan="2">title</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -44,6 +44,10 @@ ob_start();
                         <tr>
                             <td>
                                 <p class="text"><?= $exercise['title'] ?></p>
+                            </td>
+                            <td id="iconColumn">
+                                <a class="icon" href="?action=statsExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
+                                <a class="icon" href="?action=closed&id=<?= $exercise['id'] ?>"><i class="fa fa-minus-circle"></i></a>
                             </td>
                         </tr>
                     <?php }
@@ -56,7 +60,7 @@ ob_start();
             <table class="table">
                 <thead>
                 <tr>
-                    <th>title</th>
+                    <th colspan="2">title</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -66,6 +70,10 @@ ob_start();
                         <tr>
                             <td>
                                 <p class="text"><?= $exercise['title'] ?></p>
+                            </td>
+                            <td id="iconColumn">
+                                <a class="icon" href="?action=statsExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
+                                <a class="icon" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php }
