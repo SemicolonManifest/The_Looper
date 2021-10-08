@@ -87,6 +87,10 @@ input.button {
   background-color: #606c76;
 }
 
+.icon {
+  color: #9b4dca;
+}
+
 .input {
   border: 0.1rem solid #d1d1d1;
   border-radius: 0.4rem;
@@ -104,6 +108,10 @@ input.button {
   flex-direction: column;
 }
 
+#iconColumn {
+  text-align: right;
+}
+
 body {
   margin: 0;
   color: #606c76 !important;
@@ -116,8 +124,8 @@ body {
 .row {
   flex-direction: row;
   flex-wrap: nowrap !important;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  width: calc(100% + 2.0rem);
   margin: auto !important;
   text-align: left;
 }
@@ -127,15 +135,22 @@ body {
   }
 }
 
-.column {
-  display: flex;
-  width: 50% !important;
-  flex-direction: column;
+.row .column {
+  display: block;
+  flex: 1 1 auto;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 100%;
+  width: 100%;
+}
+
+td, tr {
+  border-bottom: 0.1rem solid #e1e1e1;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 112rem !important;
+  max-width: 112rem;
   padding: 0 2rem;
   position: relative;
   width: 100%;

@@ -1,6 +1,8 @@
 <?php
 namespace TheLooper\Controller;
 use TheLooper\Model\Exercise;
+use TheLooper\Model\ExerciseState;
+
 class ExerciseController
 {
 
@@ -18,7 +20,7 @@ class ExerciseController
     public function showAll(){
 
          $exercise = new Exercise();
-         return $exercise->All();
+         return $exercise->all();
 
     }
 

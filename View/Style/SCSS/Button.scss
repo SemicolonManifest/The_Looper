@@ -39,8 +39,8 @@ input.button {
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  background-color: #9b4dca;
-  border: 0 solid #9b4dca;
+  background-color: $answering;
+  border: 0 solid $answering;
   cursor: pointer;
 }
 
@@ -51,5 +51,7 @@ input.button {
 }
 
 
-
+.icon{
+  color: $answering;
+}
 

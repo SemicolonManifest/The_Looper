@@ -19,6 +19,9 @@ if (isset($_GET['action'])) {
         case 'showCreateField':
             $mainController->showCreateField();
             break;
+        case 'showManageExercise':
+            $mainController->showManageExercise();
+            break;
         default:
             $mainController->showHome();
     }

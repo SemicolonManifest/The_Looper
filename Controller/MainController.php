@@ -1,8 +1,6 @@
 <?php
 namespace TheLooper\Controller;
 
-
-
 class mainController
 {
     private ExerciseController $exerciseController;
@@ -34,6 +32,11 @@ class mainController
     public function showAllExercises(){
         $exercises = $this->exerciseController->showAll();
         include_once "View/TakeExercise.php";
+    }
+
+    public function showManageExercise(){
+        $exercises = $this->exerciseController->showAll();
+        include_once "View/ManageExercise.php";
     }
 
     public function showHome(){
