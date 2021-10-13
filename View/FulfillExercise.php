@@ -19,7 +19,7 @@ ob_start();
             <textarea name="fulfillment[3]" id="field_3" ></textarea>
         </div>
         <div class="actions">
-            <input type="submit" name="commit" value="Save" data-disable-with="Save">
+            <input class="btn btn-answering" type="submit" name="commit" value="Save" data-disable-with="Save">
         </div>
     </form>
 

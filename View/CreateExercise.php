@@ -8,7 +8,7 @@ ob_start();
             <input id="exercise_title" type="text" name="exercise[title]">
         </div>
         <div class="actions">
-            <input type="submit" name="commit" value="Create Exercise" class="answering button">
+            <input type="submit" name="commit" value="Create Exercise" class="btn btn-answering">
         </div>
         </form>
 
