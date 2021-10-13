@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$field
 ?>
     <section class="row">
         <div class="column">
@@ -14,19 +15,25 @@ ob_start();
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($fields as $field) : ?>
+                <?php foreach ($fields as $key => $field) : ?>
+                    <?php if($key === array_key_first($fields)) : ?>
                     <?php foreach ($field->takes() as $take) : ?>
                         <tr>
                             <td>
                                 <a class="text"><?= $take->timeStamp ?></a>
                             </td>
-                            <?php foreach ($take->answers() as $answer) : ?>
+                            <?php
+                            $answers = $take->answers();
+                            foreach ($take->answers() as $answer) : ?>
                                 <td>
                                     <a><?= $answer->response ?></a>
                                 </td>
                             <?php endforeach; ?>
+
                         </tr>
                     <?php endforeach; ?>
+
+                    <?php endif; ?>
                 <?php endforeach; ?>
                 </tbody>
             </table>

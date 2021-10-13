@@ -1,6 +1,8 @@
 <?php
 namespace TheLooper\Controller;
 
+
+
 class mainController
 {
     private ExerciseController $exerciseController;
@@ -39,6 +41,7 @@ class mainController
     public function showStatExercise(){
         $exercise = $this->exerciseController->find($_GET['id']);
         $fields = $exercise->fields();
+
         include_once "View/StatExercise.php";
     }
 
