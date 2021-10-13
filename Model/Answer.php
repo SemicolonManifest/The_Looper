@@ -92,13 +92,4 @@ class Answer
             return false;
         }
     }
-
-    public function take(): array
-    {
-        $take = Take::where("id",$this->take);
-        return $take;
-    }
-
-
-
 }

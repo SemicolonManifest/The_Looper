@@ -46,7 +46,7 @@ ob_start();
                                 <p class="text"><?= $exercise['title'] ?></p>
                             </td>
                             <td id="iconColumn">
-                                <a class="icon" href="?action=statsExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
+                                <a class="icon" href="?action=showStatExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
                                 <a class="icon" href="?action=closed&id=<?= $exercise['id'] ?>"><i class="fa fa-minus-circle"></i></a>
                             </td>
                         </tr>
@@ -72,7 +72,7 @@ ob_start();
                                 <p class="text"><?= $exercise['title'] ?></p>
                             </td>
                             <td id="iconColumn">
-                                <a class="icon" href="?action=statsExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
+                                <a class="icon" href="?action=showStatExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
                                 <a class="icon" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
