@@ -46,8 +46,9 @@ class mainController
     }
 
     public function showStatExerciseByField(){
-        $exercise = $this->exerciseController->find($_GET['id']);
-        $fields = $exercise->fields();
+        $field = $this->fieldController->find($_GET['field']);
+        $exercise = $this->exerciseController->find($field->exercises_id);
+
 
         include_once "View/StatExerciseByField.php";
     }
