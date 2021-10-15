@@ -25,6 +25,9 @@ if (isset($_GET['action'])) {
         case 'showStatExercise':
             $mainController->showStatExercise();
             break;
+        case 'showStatExerciseByField':
+            $mainController->showStatExerciseByField();
+            break;
         default:
             $mainController->showHome();
     }

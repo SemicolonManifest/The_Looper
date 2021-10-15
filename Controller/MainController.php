@@ -45,6 +45,13 @@ class mainController
         include_once "View/StatExercise.php";
     }
 
+    public function showStatExerciseByField(){
+        $exercise = $this->exerciseController->find($_GET['id']);
+        $fields = $exercise->fields();
+
+        include_once "View/StatExerciseByField.php";
+    }
+
     public function showHome(){
         include_once "View/Home.php";
     }
