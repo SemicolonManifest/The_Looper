@@ -1,6 +1,5 @@
 <?php
 ob_start();
-$field
 ?>
     <section class="row">
         <div class="column">
@@ -10,7 +9,7 @@ $field
                 <tr>
                     <th>Take</th>
                     <?php foreach ($fields as $field): ?>
-                        <th><a class="link_title" href="#"><?= $field->label ?></a></th>
+                        <th><a class="link_title" href="?action=showStatExerciseByField&field=<?= $field->getId() ?>"><?= $field->label ?></a></th>
                     <?php endforeach; ?>
                 </tr>
                 </thead>
@@ -20,7 +19,7 @@ $field
                     <?php foreach ($field->takes() as $take) : ?>
                         <tr>
                             <td>
-                                <a class="text"><?= $take->timeStamp ?></a>
+                                <a class="text" href="?action=showStatExerciseByTake&take=<?= $take->id ?>"><?= $take->timeStamp ?></a>
                             </td>
                             <?php
                             $answers = $take->answers();
