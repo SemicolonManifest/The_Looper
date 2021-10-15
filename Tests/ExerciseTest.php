@@ -87,7 +87,7 @@ class ExerciseTest extends TestCase
     public function testFields()
     {
         $this->assertEquals(1,count(Exercise::find(1)->fields()));
-        $this->assertEquals(1,count(Exercise::find(2)->fields()));
+        $this->assertEquals(2,count(Exercise::find(2)->fields()));
         $this->assertEquals(1,count(Exercise::find(3)->fields()));
     }
 
