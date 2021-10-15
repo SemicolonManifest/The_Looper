@@ -19,16 +19,12 @@ class ExerciseController
     }
 
     public function showAll(){
-
-         $exercise = new Exercise();
-         return $exercise->all();
+         return Exercise::all();
 
     }
 
     public function find(int $id){
-
-         $exercise = new Exercise();
-         return $exercise->find($id);
+         return Exercise::find($id);
 
     }
 

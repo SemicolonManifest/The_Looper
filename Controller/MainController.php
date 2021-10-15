@@ -47,9 +47,22 @@ class mainController
         include_once "View/StatExercise.php";
     }
 
+    public function showStatExerciseByField(){
+        $field = $this->fieldController->find($_GET['field']);
+        $exercise = $this->exerciseController->find($field->exercises_id);
+        include_once "View/StatExerciseByField.php";
+    }
+
+    public function showStatExerciseByTake(){
+        $take = $this->takeController->find($_GET['take']);
+        $exercise = $this->exerciseController->find($this->fieldController->find($take->answers()[0]->field)->exercises_id);
+        include_once "View/StatExerciseByTake.php";
+    }
+
     public function showHome(){
         include_once "View/Home.php";
     }
+
 
     public function showExercise()
     {
@@ -58,6 +71,8 @@ class mainController
     include_once "View/FulfillExercise.php";
     }
 
+
+//TODO change title header style
 
 
 }
