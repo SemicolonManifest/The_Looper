@@ -1,6 +1,8 @@
 <?php
 namespace TheLooper\Controller;
 
+use TheLooper\Model\FieldValueKind;
+
 class mainController
 {
     private ExerciseController $exerciseController;
@@ -43,8 +45,10 @@ class mainController
         include_once "View/Home.php";
     }
 
-    public function showFulfillExercise()
+    public function showExercise()
     {
+        
+
     include_once "View/FulfillExercise.php";
     }
 
