@@ -1,9 +1,11 @@
 <?php
 namespace TheLooper\Controller;
 
+<<<<<<< HEAD
 
+=======
 use TheLooper\Model\FieldValueKind;
-
+>>>>>>> feature/view_fulfill_exercise
 
 class mainController
 {
