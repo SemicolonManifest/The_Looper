@@ -121,6 +121,14 @@ input.button {
   color: #606c76;
 }
 
+.check {
+  color: #419d78;
+}
+
+.cross {
+  color: #f45866;
+}
+
 body {
   margin: 0;
   color: #606c76 !important;

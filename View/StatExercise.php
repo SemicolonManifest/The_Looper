@@ -26,7 +26,10 @@ $field
                             $answers = $take->answers();
                             foreach ($take->answers() as $answer) : ?>
                                 <td>
-                                    <a><?= $answer->response ?></a>
+                                    <a>
+                                        <i class="<?= ($answer->response != null) ? "fa fa-check short check" : "fa fa-times empty cross" ?>"></i>
+                                        <!--<i class="fa fa-check-double filled check"></i> -->
+                                       </a>
                                 </td>
                             <?php endforeach; ?>
 
