@@ -9,7 +9,7 @@ class TakeTest extends TestCase
      */
     public function testAll()
     {
-        $this->assertEquals(3,count(Take::all()));
+        $this->assertEquals(9,count(Take::all()));
     }
 
     /**
@@ -53,6 +53,16 @@ class TakeTest extends TestCase
         $id = $Take->id;
         $this->assertTrue(Take::destroy($id)); // expected to succeed
         $this->assertNull(Take::find($id)); // we should not find it back
+    }
+
+    /**
+     * @covers $take->answers()
+     */
+    public function testTake()
+    {
+        $this->assertEquals(1,count(Take::find(1)->answers()));
+        $this->assertEquals(2,count(Take::find(4)->answers()));
+        $this->assertEquals(1,count(Take::find(3)->answers()));
     }
 
 

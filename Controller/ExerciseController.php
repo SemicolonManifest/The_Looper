@@ -25,4 +25,11 @@ class ExerciseController
 
     }
 
+    public function find(int $id){
+
+         $exercise = new Exercise();
+         return $exercise->find($id);
+
+    }
+
 }

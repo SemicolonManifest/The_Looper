@@ -17,7 +17,7 @@ class FieldTest extends TestCase
      * @covers Field::all()
      */
     public function testall(){
-        $expectedAmount = 3;
+        $expectedAmount = 4;
         $actualAmount = count(Field::all());
 
         $this->assertEquals($expectedAmount,$actualAmount);
@@ -58,8 +58,8 @@ class FieldTest extends TestCase
      */
     public function testWhere()
     {
-        $this->assertEquals(1,count(Field::where("exercises_id",2)));
-        $this->assertEquals(0,count(Field::where("exercises_id",6)));
+        $this->assertEquals(2,count(Field::where("exercises_id",2)));
+        $this->assertEquals(1,count(Field::where("exercises_id",3)));
     }
 
     /**
@@ -77,13 +77,13 @@ class FieldTest extends TestCase
     }
 
     /**
-     * @covers $field->answers()
+     * @covers $field->takes()
      */
-    public function testAnswers()
+    public function testTake()
     {
-        $this->assertEquals(3,count(Field::find(1)->answers()));
-        $this->assertEquals(3,count(Field::find(2)->answers()));
-        $this->assertEquals(1,count(Field::find(3)->answers()));
+        $this->assertEquals(3,count(Field::find(1)->takes()));
+        $this->assertEquals(3,count(Field::find(2)->takes()));
+        $this->assertEquals(3,count(Field::find(3)->takes()));
     }
 
     public static function tearDownAfterClass() : void

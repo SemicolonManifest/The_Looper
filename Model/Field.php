@@ -94,11 +94,13 @@ class Field
         return $this->id;
     }
 
-    public function answers(): array
+    public function takes(): array
     {
-        $answers = Answer::where("fields_id",$this->id);
-        return $answers;
+        $res = DbConnector::selectMany("SELECT takes.id, time_stamp FROM takes INNER JOIN answers ON answers.takes_id = takes.id WHERE answers.fields_id = :fields_id", ["fields_id" => $this->id]);
+        $return = [];
+        foreach ($res as $result) {
+            $return[] = Take::make($result);
+        }
+        return $return;
     }
-
-
 }

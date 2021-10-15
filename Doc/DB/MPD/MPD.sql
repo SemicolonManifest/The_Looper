@@ -82,16 +82,28 @@ VALUES ("Pourquoi la vie", 0),
 INSERT INTO fields(label, value_kind, exercises_id)
 VALUES ("Pourquoi les humains existent ?", 0, 1),
        ("Comment ça ce fait qu'on ait pas encore de remède ?", 1, 2),
+       ("Faudrait-il être immortel ?", 0, 2),
        ("Comment ça peut exister ?", 2, 3);
 INSERT INTO takes (time_stamp)
-VALUES ('2021-10-01 10:12:30'),
+VALUES ('2021-10-02 10:02:30'),
        ('2021-10-02 10:12:30'),
-       ('2021-10-03 10:12:30');
+       ('2021-10-03 10:32:30'),
+       ('2021-10-03 11:12:30'),
+       ('2021-10-03 11:32:30'),
+       ('2021-10-03 12:12:30'),
+       ('2021-10-03 12:32:30'),
+       ('2021-10-03 13:12:30'),
+       ('2021-10-03 13:32:30');
 INSERT INTO answers (response, fields_id, takes_id)
 VALUES ('parce que', '1', '1'),
        ('woula', '1', '2'),
        ('boomer', '1', '3'),
-       ('jsp', '2', '1'),
-       ('ok', '2', '2'),
-       ('quoi ?', '2', '3'),
-       ('null', '3', '1');
+       ('jsp', '2', '4'),
+       ('ok', '2', '5'),
+       ('pourquoi pas', '2', '6'),
+       ("c'est ça ?", '3', '4'),
+       ('quoi ?', '3', '5'),
+       ('null', '3', '6'),
+       ('parce que j ai envie', '4', '7'),
+       ('sdg', '4', '8'),
+       ('nbdfbdaull', '4', '9');

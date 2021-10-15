@@ -73,4 +73,13 @@ class Take
             return false;
         }
     }
+
+    public function answers(): array
+    {
+        $answers = Answer::where("takes_id",$this->id);
+        return $answers;
+
+    }
+
+
 }
