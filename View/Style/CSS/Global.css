@@ -91,7 +91,7 @@ input.button {
   color: #9b4dca;
 }
 
-.input {
+form .input {
   border: 0.1rem solid #d1d1d1;
   border-radius: 0.4rem;
   box-shadow: none;
@@ -102,10 +102,13 @@ input.button {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
-.field {
+form .field {
   display: flex;
   flex-direction: column;
+}
+form div {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #iconColumn {
@@ -128,6 +131,18 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+textarea, input[type=text] {
+  appearance: none;
+  background-color: transparent;
+  border: 0.1rem solid #d1d1d1;
+  border-radius: 0.4rem;
+  box-shadow: none;
+  box-sizing: inherit;
+  height: 3.8rem;
+  padding: 0.6rem 1rem;
+  width: 100%;
 }
 
 .row {
@@ -159,10 +174,8 @@ td, tr {
 
 .container {
   margin: 0 auto;
-  max-width: 112rem;
   padding: 0 2rem;
   position: relative;
-  width: 100%;
 }
 
 h1 {
