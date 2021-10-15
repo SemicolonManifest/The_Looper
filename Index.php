@@ -27,6 +27,7 @@ if (isset($_GET['action'])) {
             break;
         case 'showExercise':
             $mainController->showExercise();
+            break;
         default:
             $mainController->showHome();
     }
