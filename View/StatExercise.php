@@ -19,11 +19,9 @@ ob_start();
                     <?php foreach ($field->takes() as $take) : ?>
                         <tr>
                             <td>
-                                <a class="text" href="?action=showStatExerciseByTake&take=<?= $take->id ?>"><?= $take->timeStamp ?></a>
+                                <a class="link_title" href="?action=showStatExerciseByTake&take=<?= $take->id ?>"><?= $take->timeStamp ?></a>
                             </td>
-                            <?php
-                            $answers = $take->answers();
-                            foreach ($take->answers() as $answer) : ?>
+                            <?php foreach ($take->answers() as $answer) : ?>
                                 <td>
                                     <a>
                                         <i class="<?= ($answer->response != null) ? "fa fa-check short check" : "fa fa-times empty cross" ?>"></i>
