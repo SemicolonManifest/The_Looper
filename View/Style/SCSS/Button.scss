@@ -1,0 +1,60 @@
+//TODO - Refactor
+.button.answering {
+  background-color: $answering;
+  border-color: $answering;
+}
+
+.button.managing {
+  background-color: $managing;
+  border-color: $managing;
+}
+
+.button.results {
+  background-color: $results;
+  border-color: $results;
+}
+
+.button {
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+  border-radius: .4rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.button.column {
+  width: 30% !important;
+  margin-top: 20px;
+}
+
+
+
+
+input.button {
+  margin: 0;
+  width: 171px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: $answering;
+  border: 0 solid $answering;
+  cursor: pointer;
+}
+
+
+
+.button:hover {
+  background-color: $hover;
+}
+
+
+.icon{
+  color: $answering;
+}
+
+
+

@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-4": {
+            "TheLooper\\Model\\": "Model",
+            "TheLooper\\Controller\\": "Controller"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+  "require": {
+    "ext-pdo": "*"
+  }
+}

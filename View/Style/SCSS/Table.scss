@@ -1,0 +1,20 @@
+#iconColumn {
+text-align: right;
+}
+
+.link_title{
+  text-decoration: none;
+  color: $answering;
+}
+
+.link_title:hover{
+  color: $hover;
+}
+
+.check {
+  color: $check;
+}
+
+.cross {
+  color: $cross;
+}

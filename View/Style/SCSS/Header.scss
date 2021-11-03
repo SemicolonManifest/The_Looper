@@ -1,0 +1,47 @@
+header.dashboard{
+  background: $answering;
+}
+
+header.take{
+  background: $answering;
+  height: 50px;
+}
+
+header.results{
+  background: $results;
+  height: 50px;
+}
+
+header.managing{
+  background: $managing;
+  height: 50px;
+}
+
+
+
+
+header.dashboard .container {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+}
+
+
+
+
+#Logo{
+  height: 50px;
+}
+
+#LogoDashboard{
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+header.dashboard .container h1 {
+  letter-spacing: 1.1rem;
+  font-weight: 300;
+  padding-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
