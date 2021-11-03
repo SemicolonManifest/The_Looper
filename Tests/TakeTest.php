@@ -4,6 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 class TakeTest extends TestCase
 {
+    static function setUpBeforeClass(): void
+    {
+        $sqlscript = file_get_contents(dirname(__DIR__, 1) . '/Doc/DB/SQL/Script.sql');
+        DbConnector::execute($sqlscript);
+    }
+
     /**
      * @covers Take::all()
      */

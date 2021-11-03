@@ -9,7 +9,7 @@ class FieldTest extends TestCase
 
     static function setUpBeforeClass(): void
     {
-        $sqlscript = file_get_contents(dirname(__DIR__,1).'/Doc/DB/MPD/MPD.sql');
+        $sqlscript = file_get_contents(dirname(__DIR__, 1) . '/Doc/DB/SQL/Script.sql');
         DbConnector::execute($sqlscript);
     }
 
