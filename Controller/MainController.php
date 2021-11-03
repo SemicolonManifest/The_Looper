@@ -2,6 +2,7 @@
 namespace TheLooper\Controller;
 
 
+use TheLooper\Model\Exercise;
 use TheLooper\Model\FieldValueKind;
 
 
@@ -66,9 +67,16 @@ class mainController
 
     public function showExercise()
     {
-        
+        if(isset($_GET["id"])){
+            $exercise = Exercise::find($_GET['id']);
+            $fields = $exercise->fields();
 
-    include_once "View/FulfillExercise.php";
+            include_once "View/FulfillExercise.php";
+        }else{
+            header("Location:?action=showAllExercises");
+        }
+
+
     }
 
 
