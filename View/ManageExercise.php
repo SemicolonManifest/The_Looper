@@ -62,8 +62,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($exercises as $exercise) {
-                    if ($exercise['state'] == \TheLooper\Model\ExerciseState::CLOSED) {
+                <?php foreach ($exercises as $exercise):
+                    if ($exercise['state'] == \TheLooper\Model\ExerciseState::CLOSED):
                         ?>
                         <tr>
                             <td>
@@ -71,11 +71,12 @@
                             </td>
                             <td id="iconColumn">
                                 <a class="icon" href="?action=showStatExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
-                                <a class="icon" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
+                                <a class="icon" onclick="return confirm('Are you sure?');" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
-                    <?php }
-                } ?>
+                    <?php endif;
+                    endforeach;
+                 ?>
                 </tbody>
             </table>
         </div>

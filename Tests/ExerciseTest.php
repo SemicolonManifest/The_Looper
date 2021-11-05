@@ -54,16 +54,6 @@ class ExerciseTest extends TestCase
     }
 
     /**
-     * @covers $exercise->save() doesn't allow duplicates
-     */
-    public function testSaveRejectsDuplicates()
-    {
-        $exercise = Exercise::find(1);
-        $exercise->title = Exercise::find(2)->title;
-        $this->assertFalse($exercise->save());
-    }
-
-    /**
      * @covers $exercise->delete()
      */
     public function testDelete()
