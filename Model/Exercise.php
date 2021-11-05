@@ -64,14 +64,15 @@ class Exercise
 
     public function save(): bool
     {
-        $check = DbConnector::selectOne("SELECT * FROM exercises WHERE title = :title", ['title' => $this->title]);
+        $check = DbConnector::selectOne("SELECT * FROM exercises WHERE id = :id", ['id' => $this->id]);
 
-        if (!empty($check)) {
+        if (empty($check)) {
             return false;
         }
 
         return DbConnector::execute("UPDATE exercises set title = :title, state = :state WHERE id = :id", ['id' => $this->id, 'title' => $this->title, 'state' => $this->state]);
     }
+
 
     public function delete(): bool
     {
@@ -90,7 +91,7 @@ class Exercise
 
     public function fields(): array
     {
-        $fields = Field::where("exercises_id",$this->id);
+        $fields = Field::where("exercises_id", $this->id);
         return $fields;
     }
 
