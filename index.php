@@ -34,6 +34,15 @@ if (isset($_GET['action'])) {
         case 'showExercise':
             $mainController->showExercise();
             break;
+        case 'answering':
+            $mainController->answering();
+            break;
+        case 'closed':
+            $mainController->closed();
+            break;
+        case 'deleteExercise':
+            $mainController->deleteExercise();
+            break;
         default:
             $mainController->showHome();
     }
