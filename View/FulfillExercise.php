@@ -2,7 +2,6 @@
 
 use TheLooper\Model\FieldValueKind;
 
-ob_start();
 ?>
     <h1>Your take</h1>
     <p>If you'd like to come back later to finish, simply submit it with blanks.</p>
@@ -21,8 +20,3 @@ ob_start();
         </div>
     </form>
 
-<?php
-$headerPath = "Components/Header/Answering.php";
-$contenu = ob_get_clean();
-
-require "Layout.php";

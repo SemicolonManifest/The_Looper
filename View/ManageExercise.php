@@ -1,6 +1,4 @@
-<?php
-ob_start();
-?>
+
     <section class="row">
         <div class="column">
             <h1>Building</h1>
@@ -84,8 +82,3 @@ ob_start();
     </section>
 
 
-<?php
-$headerPath = "Components/Header/Results.php";
-$contenu = ob_get_clean();
-
-require "Layout.php";

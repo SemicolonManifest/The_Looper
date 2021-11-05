@@ -1,6 +1,4 @@
-<?php
-ob_start();
-?>
+
     <div class="row">
         <div class="column">
             <h1 class="text">Fields</h1>
@@ -39,10 +37,3 @@ ob_start();
 
 
     </div>
-
-
-<?php
-$headerPath = "Components/Header/Managing.php";
-$contenu = ob_get_clean();
-
-require "Layout.php";

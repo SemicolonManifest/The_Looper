@@ -1,6 +1,4 @@
-<?php
-ob_start();
-?>
+
         <section class="row">
             <div class="column">
                 <?php foreach ($exercises as $exercise ){ ?>
@@ -14,9 +12,3 @@ ob_start();
             </div>
         </section>
 
-
-<?php
-$headerPath = "Components/Header/Answering.php";
-$contenu = ob_get_clean();
-
-require "Layout.php";
