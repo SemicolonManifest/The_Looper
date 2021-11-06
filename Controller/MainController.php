@@ -8,24 +8,17 @@ use TheLooper\Model\ExerciseState;
 use TheLooper\Model\FieldValueKind;
 
 
-class mainController
+class MainController
 {
-    private ExerciseController $exerciseController;
-    private FieldController $fieldController;
-    private AnswerController $answerController;
-    private TakeController $takeController;
+
 
     public function __construct()
     {
-        $this->exerciseController = new ExerciseController();
-        $this->fieldController = new FieldController();
-        $this->answerController = new AnswerController();
-        $this->takeController = new TakeController();
     }
 
 
 
-    public function showHome()
+    public static function showHome()
     {
         ob_start();
 

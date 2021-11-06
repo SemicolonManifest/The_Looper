@@ -1,51 +1,51 @@
 <?php
 namespace TheLooper;
-use TheLooper\Controller\mainController;
+use TheLooper\Controller\ExerciseController;
+use TheLooper\Controller\FieldController;
+use TheLooper\Controller\MainController;
 
 session_start();
 date_default_timezone_set('Europe/Zurich');
 require_once 'vendor/autoload.php';
 
-$mainController = new mainController();
-
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'showAllExercises':
-            $mainController->showAllExercises();
+            ExerciseController::showAllExercises();
             break;
         case 'showCreateExercise':
-            $mainController->showCreateExercise();
+            ExerciseController::showCreateExercise();
             break;
         case 'showCreateField':
-            $mainController->showCreateField();
+            FieldController::showCreateField();
             break;
         case 'showManageExercise':
-            $mainController->showManageExercise();
+            ExerciseController::showManageExercise();
             break;
         case 'showStatExercise':
-            $mainController->showStatExercise();
+            ExerciseController::showStatExercise();
             break;
         case 'showStatExerciseByField':
-            $mainController->showStatExerciseByField();
+            ExerciseController::showStatExerciseByField();
             break;
         case 'showStatExerciseByTake':
-            $mainController->showStatExerciseByTake();
+            ExerciseController::showStatExerciseByTake();
             break;
         case 'showExercise':
-            $mainController->showExercise();
+            ExerciseController::showExercise();
             break;
         case 'answering':
-            $mainController->answering();
+            ExerciseController::answering();
             break;
         case 'closed':
-            $mainController->closed();
+            ExerciseController::closed();
             break;
         case 'deleteExercise':
-            $mainController->deleteExercise();
+            ExerciseController::deleteExercise();
             break;
         default:
-            $mainController->showHome();
+            MainController::showHome();
     }
 }else{
-    $mainController->showHome();
+    MainController::showHome();
 }

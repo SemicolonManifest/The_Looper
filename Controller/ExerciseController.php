@@ -12,7 +12,7 @@ class ExerciseController
 
     }
 
-    public function create($title){
+    public static function create($title){
 
          $exercise = new Exercise();
          $exercise->title = $title;
@@ -20,17 +20,7 @@ class ExerciseController
 
     }
 
-    public function showAll(){
-         return Exercise::all();
-
-    }
-
-    public function find(int $id){
-         return Exercise::find($id);
-
-    }
-
-    public function showCreateExercise()
+    public static function showCreateExercise()
     {
 
         ob_start();
@@ -41,7 +31,7 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public function showAllExercises()
+    public static function showAllExercises()
     {
         ob_start();
         $exercises = Exercise::all();
@@ -52,7 +42,7 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public function showManageExercise()
+    public static function showManageExercise()
     {
         ob_start();
         $exercises = Exercise::all();
@@ -63,7 +53,7 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public function showStatExercise()
+    public static function showStatExercise()
     {
         ob_start();
         $exercise = Exercise::find($_GET['id']);
@@ -76,7 +66,7 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public function showStatExerciseByField()
+    public static function showStatExerciseByField()
     {
         ob_start();
         $field = Field::find($_GET['field']);
@@ -88,7 +78,7 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public function showStatExerciseByTake()
+    public static function showStatExerciseByTake()
     {
         ob_start();
         $take = Take::find($_GET['take']);
@@ -100,7 +90,7 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public function showExercise()
+    public static function showExercise()
     {
         ob_start();
 
@@ -118,26 +108,26 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public function answering()
+    public static function answering()
     {
         // TODO - Rename answering() function
         // can not understand what it's doing without going to it's code and the code that use it
         $exercise = Exercise::find($_GET['id']);
         $exercise->state = ExerciseState::ANSWERING;
         $exercise->save();
-        $this->showManageExercise();
+        ExerciseController::showManageExercise();
     }
 
-    public function closed()
+    public static function closed()
     {
         // TODO - rename closed() function
         $exercise = Exercise::find($_GET['id']);
         $exercise->state = ExerciseState::CLOSED;
         $exercise->save();
-        $this->showManageExercise();
+        ExerciseController::showManageExercise();
     }
 
-    public function deleteExercise()
+    public static function deleteExercise()
     {
         $exercise = Exercise::find($_GET['id']);
         foreach ($exercise->fields() as $field) {
@@ -151,6 +141,6 @@ class ExerciseController
         }
 
         $exercise->delete();
-        $this->showManageExercise();
+        ExerciseController::showManageExercise();
     }
 }
