@@ -1,6 +1,7 @@
 <?php
 
 namespace TheLooper\Model;
+use TheLooper\Model\DbConnector;
 
 class Exercise
 {
