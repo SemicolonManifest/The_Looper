@@ -40,6 +40,17 @@ class FieldTest extends TestCase
         $this->assertTrue($field->create());
     }
 
+    public function testSave()
+    {
+        $field = Field::find(1);
+        $saveField = $field->label;
+        $field->label = "testLabel";
+        $this->assertTrue($field->save());
+        $this->assertEquals("testLabel",Field::find(1)->label);
+        $field->label = $saveField;
+        $field->save();
+    }
+
     /**
      * @covers $field->delete()
      * @depends testCreate
