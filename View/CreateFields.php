@@ -26,7 +26,11 @@
                     <label for="field_label">Label</label>
                     <input class="input" id="field_label" type="text" name="field[label]">
                     <label for="field_value">Value kind</label>
-                    <input class="input" id="field_value" type="text" name="field[value]">
+                    <select class="input" id="field_value" name="field[value]">
+                        <option value="0">Single line text</option>
+                        <option value="1">List of single lines</option>
+                        <option value="2">Multi-line text</option>
+                    </select>
                 </div>
                 <div class="actions">
                     <input type="submit" name="commit" value="Create Field" class="answering button">
