@@ -141,6 +141,7 @@ class ExerciseController
         }
 
         $exercise->delete();
+        header('Location: http://localhost:8082/?action=showManageExercise');
         ExerciseController::showManageExercise();
     }
 }
