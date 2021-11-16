@@ -31,6 +31,19 @@ class FieldController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    public static function showEditField()
+    {
+        ob_start();
+
+        $field = Field::find($_GET['id']);
+
+        include_once "View/EditFields.php";
+        $headerPath = "Components/Header/Managing.php";
+        $contenu = ob_get_clean();
+
+        require dirname(__DIR__, 1) . "/View/Layout.php";
+    }
+
     public static function createField()
     {
         ob_start();
