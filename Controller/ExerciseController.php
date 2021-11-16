@@ -135,7 +135,6 @@ class ExerciseController
 
         $exercise->delete();
         header('Location: ?action=showManageExercise');
-        ExerciseController::showManageExercise();
     }
 
     public static  function fulfill(){

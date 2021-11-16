@@ -20,7 +20,7 @@
                         <?= ($field->value_kind != \TheLooper\Model\FieldValueKind::SINGLE_LINE) ? ($field->value_kind != \TheLooper\Model\FieldValueKind::LIST_OF_LINES) ? ($field->value_kind == \TheLooper\Model\FieldValueKind::MULTI_LINES) ? "multi_lines" : "" : "list_of_lines" : "single_line" ?>
                     </td>
                     <td id="iconColumn">
-                        <a class="icon" href="?action=showEditField&id=<?= $field->getId() ?>"><i class="fa fa-edit"></i></a>
+                        <a class="icon" href="?action=showEditField&id=<?= $field->getId() ?>&exercise_id=<?= $exercise->id ?>"><i class="fa fa-edit"></i></a>
                         <a class="icon" onclick="return confirm('Are you sure?');"  href="?action=deleteField&id=<?= $field->getId() ?>&exercise_id=<?= $exercise->id ?>"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>

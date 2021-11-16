@@ -31,6 +31,9 @@ if (isset($_GET['action'])) {
         case 'showStatExerciseByTake':
             ExerciseController::showStatExerciseByTake();
             break;
+        case 'showEditField':
+            FieldController::showEditField();
+            break;
         case 'showExercise':
             ExerciseController::showExercise();
             break;
@@ -50,6 +53,9 @@ if (isset($_GET['action'])) {
             break;
         case 'deleteField':
             FieldController::deleteField();
+            break;
+        case 'editField':
+            FieldController::editField();
             break;
         default:
             MainController::showHome();

@@ -31,6 +31,20 @@ class FieldController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    public static function showEditField()
+    {
+        ob_start();
+
+        $field = Field::find($_GET['id']);
+        $exercise = Exercise::find($_GET['exercise_id']);
+
+        include_once "View/EditFields.php";
+        $headerPath = "Components/Header/Managing.php";
+        $contenu = ob_get_clean();
+
+        require dirname(__DIR__, 1) . "/View/Layout.php";
+    }
+
     public static function createField()
     {
         ob_start();
@@ -52,6 +66,15 @@ class FieldController
     {
         $field = Field::find($_GET['id']);
         $field->delete();
+        header('Location: ?action=showCreateField&id=' . $_GET['exercise_id']);
+    }
+
+    public static function editField()
+    {
+        $field = Field::find($_GET['field_id']);
+        $field->label = $_GET['field']['label'];
+        $field->value_kind = $_GET['field']['value'];
+        $field->save();
         header('Location: ?action=showCreateField&id=' . $_GET['exercise_id']);
     }
 }
