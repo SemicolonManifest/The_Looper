@@ -147,6 +147,7 @@ class ExerciseController
             $answer = new Answer();
             $answer->field = Field::find($id);
             $answer->take = Take::find($take->id);
+            $answer->response = $fulfillment;
             $answer->create();
 
 
