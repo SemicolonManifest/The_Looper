@@ -4,8 +4,8 @@ ob_start();
     <header class="managing">
         <section class="container">
             <a href="?"><img id="Logo" src="View/Style/Assets/logo.png"></a>
-            <?php if (isset($_POST['exercise']['title'])) { ?>
-                <a>Exercise : <span><?= $_POST['exercise']['title'] ?></span></a>
+            <?php if (isset($exercise)) { ?>
+                <a>Exercise : <span><?= $exercise->title ?></span></a>
             <?php } ?>
         </section>
     </header>

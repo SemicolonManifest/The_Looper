@@ -45,6 +45,11 @@ if (isset($_GET['action'])) {
             break;
         case 'fulfillExercise':
             ExerciseController::fulfill();
+        case 'createField':
+            FieldController::createField();
+            break;
+        case 'deleteField':
+            FieldController::deleteField();
             break;
         default:
             MainController::showHome();
