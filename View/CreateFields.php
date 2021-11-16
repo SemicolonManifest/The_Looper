@@ -21,7 +21,9 @@
         </div>
         <div class="column">
             <h1 class="text">New Fields</h1>
-            <form action="/exercises" method="post">
+            <form action="" method="get">
+                <input type="hidden" name="action" value="createField">
+                <input type="hidden" name="exercise_id" value="<?= $exercise->id ?>">
                 <div class="field">
                     <label for="field_label">Label</label>
                     <input class="input" id="field_label" type="text" name="field[label]">
