@@ -12,14 +12,6 @@ class ExerciseController
 
     }
 
-    public static function create($title){
-
-         $exercise = new Exercise();
-         $exercise->title = $title;
-         $exercise->create();
-
-    }
-
     public static function showCreateExercise()
     {
 
@@ -141,7 +133,7 @@ class ExerciseController
         }
 
         $exercise->delete();
-        header('Location: http://localhost:8082/?action=showManageExercise');
+        header('Location: ?action=showManageExercise');
         ExerciseController::showManageExercise();
     }
 }
