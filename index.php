@@ -52,6 +52,9 @@ if (isset($_GET['action'])) {
         case 'deleteField':
             FieldController::deleteField();
             break;
+        case 'editField':
+            FieldController::editField();
+            break;
         default:
             MainController::showHome();
     }
