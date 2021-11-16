@@ -4,6 +4,7 @@
         <form action="" method="get">
             <input type="hidden" name="action" value="editField">
             <input type="hidden" name="field_id" value="<?= $field->getId() ?>">
+            <input type="hidden" name="exercise_id" value="<?= $exercise->id ?>">
             <div class="field">
                 <label for="field_label">Label</label>
                 <input class="input" id="field_label" type="text" name="field[label]" value="<?= $field->label ?>">
@@ -15,7 +16,7 @@
                 </select>
             </div>
             <div class="actions">
-                <input type="submit" name="commit" value="Update Field" class="answering button">
+                <input type="submit" value="Update Field" class="answering button">
             </div>
         </form>
 
