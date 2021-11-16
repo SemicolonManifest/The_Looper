@@ -21,7 +21,7 @@
                     </td>
                     <td id="iconColumn">
                         <a class="icon" href="?action=showEditField&id=<?= $field->getId() ?>"><i class="fa fa-edit"></i></a>
-                        <a class="icon" href="?action=deleteField&id=<?= $field->getId() ?>"><i class="fa fa-trash"></i></a>
+                        <a class="icon" onclick="return confirm('Are you sure?');"  href="?action=deleteField&id=<?= $field->getId() ?>&exercise_id=<?= $exercise->id ?>"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
