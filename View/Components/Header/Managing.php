@@ -6,6 +6,8 @@ ob_start();
             <a href="?"><img id="Logo" src="View/Style/Assets/logo.png"></a>
             <?php if (isset($exercise)) { ?>
                 <a>Exercise : <span><?= $exercise->title ?></span></a>
+            <?php } else { ?>
+                <a>Exercise</a>
             <?php } ?>
         </section>
     </header>
