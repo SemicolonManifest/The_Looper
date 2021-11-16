@@ -21,12 +21,6 @@ class Exercise
 
     public function create(): bool
     {
-        $check = DbConnector::selectOne("SELECT * FROM exercises WHERE title = :title", ['title' => $this->title]);
-
-        if (!empty($check)) {
-            return false;
-        }
-
         $this->id = DBConnector::insert("INSERT INTO exercises (title, state)  values (:title, :state);", ['title' => $this->title, 'state' => $this->state]);
 
         return true;
