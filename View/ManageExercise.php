@@ -18,7 +18,7 @@
                             </td>
                             <td id="iconColumn">
                                 <a class="icon" href="?action=answering&id=<?= $exercise['id'] ?>"><i class="fa fa-comment"></i></a>
-                                <a class="icon" href="?action=manageField&id=<?= $exercise['id'] ?>"><i class="fa fa-edit"></i></a>
+                                <a class="icon" href="?action=showCreateField&id=<?= $exercise['id'] ?>"><i class="fa fa-edit"></i></a>
                                 <a class="icon" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
