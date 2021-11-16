@@ -36,6 +36,7 @@ class FieldController
         $field->create();
 
 
+        header('Location: ?action=showCreateField&id='.$_GET['exercise_id']);
         include_once "View/CreateFields.php";
         $headerPath = "Components/Header/Managing.php";
         $contenu = ob_get_clean();
