@@ -11,7 +11,7 @@ use TheLooper\Model\FieldValueKind;
         <?php foreach ($fields as $field): ?>
             <div class="field">
                 <label for="field_<?= ($field->getId()) ?>"><?= ($field->label) ?></label>
-                <<?php if ($field->value_kind == FieldValueKind::LIST_OF_LINES || $field->value_kind == FieldValueKind::MULTI_LINES): ?>textarea<?php else: ?>input type="text" <?php endif; ?> name="fulfillment[<?= $field->getId() ?>]" id="field_<?=$field->getId();?>"><?php if ($field->value_kind == FieldValueKind::LIST_OF_LINES || $field->value_kind == FieldValueKind::MULTI_LINES): ?></textarea><?php endif;?></div>
+                <<?php if ($field->value_kind == FieldValueKind::LIST_OF_LINES || $field->value_kind == FieldValueKind::MULTI_LINES): ?>textarea<?php else: ?>input type="text" <?php endif; ?> name="fulfillments[<?= $field->getId() ?>]" id="field_<?=$field->getId();?>"><?php if ($field->value_kind == FieldValueKind::LIST_OF_LINES || $field->value_kind == FieldValueKind::MULTI_LINES): ?></textarea><?php endif;?></div>
 
         <?php endforeach; ?>
 

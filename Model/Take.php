@@ -1,10 +1,12 @@
 <?php
 namespace TheLooper\Model;
 
+use DateTime;
+
 class Take
 {
     public int $id;
-    public string $timeStamp;
+    public DateTime $timeStamp;
 
     /*public function __construct($timeStamp)
     {
@@ -14,7 +16,7 @@ class Take
 
     public function create(): bool
     {
-        $this->id = DBConnector::insert("INSERT INTO takes (time_stamp) values (:time_stamp);", ['time_stamp' => $this->timeStamp]);
+        $this->id = DBConnector::insert("INSERT INTO takes values ();");
 
         return true;
     }
@@ -27,7 +29,7 @@ class Take
             $take->id = $params['id'];
         }
 
-        $take->timeStamp = date("Y-m-d H:i:s", strtotime($params['time_stamp']));
+        $take->timeStamp = new DateTime( $params['time_stamp']);
 
         return $take;
     }
@@ -44,7 +46,7 @@ class Take
         if (!$res) {
             return null;
         }
-
+        $test = gettype($res['time_stamp']);
         return self::make(["id" => $res["id"], "time_stamp" => $res['time_stamp']]);
 
     }

@@ -33,7 +33,6 @@ class TakeTest extends TestCase
     public function testCreate()
     {
         $Take = new Take();
-        $Take->timeStamp = "2021-10-01 12:20:30";
         $this->assertTrue($Take->create());
     }
 

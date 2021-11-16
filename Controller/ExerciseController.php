@@ -1,5 +1,6 @@
 <?php
 namespace TheLooper\Controller;
+use TheLooper\Model\Answer;
 use TheLooper\Model\Exercise;
 use TheLooper\Model\ExerciseState;
 use TheLooper\Model\Field;
@@ -143,5 +144,14 @@ class ExerciseController
         $exercise->delete();
         header('Location: http://localhost:8082/?action=showManageExercise');
         ExerciseController::showManageExercise();
+    }
+
+    public static  function fulfill(){
+        
+
+
+
+        $fulfillmentId = 1;
+        header('Location: ?action=?action=editFulfillment&id='.$fulfillmentId);
     }
 }

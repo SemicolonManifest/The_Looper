@@ -34,10 +34,9 @@ class AnswerTest extends TestCase
     {
         $Answer = new Answer();
         $Answer->response = "UnitTest";
-        $Answer->field = 3;
-        $Answer->take = 2;
+        $Answer->field = Field::find(3);
+        $Answer->take = Take::find(2);
         $this->assertTrue($Answer->create());
-        $this->assertFalse($Answer->create());
     }
 
     /**
@@ -69,7 +68,7 @@ class AnswerTest extends TestCase
      */
     public function testDelete()
     {
-        $Answer = Answer::make(['response' => "PHPUnit", 'field' => 3, 'take' => 3]);
+        $Answer = Answer::make(['response' => "PHPUnit", 'field' => Field::find(3), 'take' => Take::find(3)]);
         $Answer->create();
         $id = $Answer->id;
         $this->assertTrue($Answer->delete()); // expected to succeed
@@ -81,7 +80,7 @@ class AnswerTest extends TestCase
      */
     public function testDestroy()
     {
-        $Answer = Answer::make(['response' => "PHPUnit", 'field' => 3, 'take' => 3]);
+        $Answer = Answer::make(['response' => "PHPUnit", 'field' => Field::find(3), 'take' => Take::find(3)]);
         $Answer->create();
         $id = $Answer->id;
         $this->assertTrue(Answer::destroy($id)); // expected to succeed

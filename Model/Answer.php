@@ -4,8 +4,8 @@ class Answer
 {
     public int $id;
     public string $response;
-    public int $field;
-    public int  $take;
+    public Field $field;
+    public Take  $take;
 
     /*public function __construct(string $response,array $take){
         $this->response = $response;
@@ -14,13 +14,7 @@ class Answer
 
     public function create(): bool
     {
-        $check = DbConnector::selectOne("SELECT * FROM answers WHERE fields_id = :fields_id AND takes_id = :takes_id", ['fields_id' => $this->field, 'takes_id' => $this->take]);
-
-        if (!empty($check)) {
-            return false;
-        }
-
-        $this->id = DBConnector::insert("INSERT INTO answers (response, fields_id, takes_id) values (:response, :fields_id, :takes_id);", ['response' => $this->response, 'fields_id' => $this->field, 'takes_id' => $this->take]);
+        $this->id = DBConnector::insert("INSERT INTO answers (response, fields_id, takes_id) values (:response, :fields_id, :takes_id);", ['response' => $this->response, 'fields_id' => $this->field->getId(), 'takes_id' => $this->take->id]);
 
         return true;
     }
@@ -53,7 +47,7 @@ class Answer
             return null;
         }
 
-        return self::make(["id" => $res["id"], "response" => $res['response'], "field" => $res['fields_id'], "take" => $res['takes_id']]);
+        return self::make(["id" => $res["id"], "response" => $res['response'], "field" => Field::find($res['fields_id']), "take" => Take::find($res['takes_id'])]);
 
     }
 
@@ -62,7 +56,7 @@ class Answer
         $result = DbConnector::selectMany("select * from answers where $field = :value;",["value"=>$value]);
         $return = [];
         foreach ($result as $res){
-            $return[] = self::make(["id" => $res["id"], "response" => $res['response'], "field" => $res['fields_id'], "take" => $res['takes_id']]);
+            $return[] = self::make(["id" => $res["id"], "response" => $res['response'], "field" => Field::find($res['fields_id']), "take" => Take::find($res['takes_id'])]);
         }
         return $return;
     }
