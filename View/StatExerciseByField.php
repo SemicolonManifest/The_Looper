@@ -15,10 +15,10 @@
                 <?php foreach ($field->takes() as $take) : ?>
                     <tr>
                         <td>
-                            <a class="link_title" href="?action=showStatExerciseByTake&take=<?= $take->id ?>"><?= $take->timeStamp ?></a>
+                            <a class="link_title" href="?action=showStatExerciseByTake&take=<?= $take->id ?>"><?= $take->timeStamp->format('Y-m-d H:i:s') ?> UTC</a>
                         </td>
                         <?php foreach ($take->answers() as $answer) : ?>
-                            <?php if ($answer->field == $field->getId()): ?>
+                            <?php if ($answer->field->getId() == $field->getId()): ?>
                                 <td>
                                     <a>
                                         <?= $answer->response ?>

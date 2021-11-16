@@ -75,7 +75,7 @@ class ExerciseController
     {
         ob_start();
         $take = Take::find($_GET['take']);
-        $exercise = Exercise::find(Field::find($take->answers()[0]->field)->exercises_id);
+        $exercise = Exercise::find(Field::find($take->answers()[0]->field->getId())->exercises_id);
         include_once "View/StatExerciseByTake.php";
         $headerPath = "Components/Header/Results.php";
         $contenu = ob_get_clean();
@@ -138,11 +138,21 @@ class ExerciseController
     }
 
     public static  function fulfill(){
-        
+        $take = new Take();
+        $take->create();
+        $fulfillments = $_POST["fulfillments"];
+
+        foreach ($fulfillments as $id => $fulfillment){
+            $answer = new Answer();
+            $answer->field = Field::find($id);
+            $answer->take = Take::find($take->id);
+            $answer->response = $fulfillment;
+            $answer->create();
 
 
 
-        $fulfillmentId = 1;
-        header('Location: ?action=?action=editFulfillment&id='.$fulfillmentId);
+        }
+
+        header('Location: ?action=?action=editFulfillment&id='.$take->id);
     }
 }
