@@ -31,6 +31,9 @@ if (isset($_GET['action'])) {
         case 'showStatExerciseByTake':
             ExerciseController::showStatExerciseByTake();
             break;
+        case 'showEditField':
+            FieldController::showEditField();
+            break;
         case 'showExercise':
             ExerciseController::showExercise();
             break;
