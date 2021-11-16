@@ -53,6 +53,5 @@ class FieldController
         $field = Field::find($_GET['id']);
         $field->delete();
         header('Location: ?action=showCreateField&id=' . $_GET['exercise_id']);
-        ExerciseController::showManageExercise();
     }
 }
