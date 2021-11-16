@@ -1,11 +1,14 @@
 <?php
+
 namespace TheLooper\Controller;
+
 use TheLooper\Model\Field;
 use TheLooper\Model\Exercise;
 
 class FieldController
 {
-    public function __construct(){
+    public function __construct()
+    {
     }
 
     public static function showCreateField()
@@ -13,11 +16,10 @@ class FieldController
         ob_start();
         $exercise = new Exercise();
 
-        if(isset($_POST['exercise']['title'])){
+        if (isset($_POST['exercise']['title'])) {
             $exercise->title = $_POST['exercise']['title'];
             $exercise->create();
-        }
-        else{
+        } else {
             $exercise = Exercise::find($_GET['id']);
         }
 
@@ -29,19 +31,28 @@ class FieldController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
-    public static function createField(){
+    public static function createField()
+    {
         ob_start();
         $exercise = Exercise::find($_GET['exercise_id']);
         $field = new Field($_GET["field"]["label"], $_GET["field"]["value"], $exercise->id);
         $field->create();
 
 
-        header('Location: ?action=showCreateField&id='.$_GET['exercise_id']);
+        header('Location: ?action=showCreateField&id=' . $_GET['exercise_id']);
         include_once "View/CreateFields.php";
         $headerPath = "Components/Header/Managing.php";
         $contenu = ob_get_clean();
 
         require dirname(__DIR__, 1) . "/View/Layout.php";
 
+    }
+
+    public static function deleteField()
+    {
+        $field = Field::find($_GET['id']);
+        $field->delete();
+        header('Location: ?action=showCreateField&id=' . $_GET['exercise_id']);
+        ExerciseController::showManageExercise();
     }
 }
