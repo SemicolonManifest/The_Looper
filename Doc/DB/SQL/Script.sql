@@ -1,3 +1,4 @@
+use the_looper;
 -- MySQL Workbench Synchronization
 -- Generated: 2021-09-29 15:22
 -- Model: Exercise_looper
@@ -8,7 +9,7 @@ SET @OLD_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0;
 SET @OLD_FOREIGN_KEY_CHECKS = @@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS = 0;
 SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE =
         'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-DROP TABLE exercises;
+DROP TABLE if exists exercises;
 CREATE TABLE IF NOT EXISTS `exercises`
 (
     `id`    INT(11)      NOT NULL AUTO_INCREMENT,
@@ -18,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `exercises`
 )
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
-DROP TABLE takes;
+DROP TABLE if exists takes;
 CREATE TABLE IF NOT EXISTS `takes`
 (
     `id`         INT(11)   NOT NULL AUTO_INCREMENT,
@@ -27,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `takes`
 )
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
-DROP TABLE fields;
+DROP TABLE if exists fields;
 CREATE TABLE IF NOT EXISTS `fields`
 (
     `id`           INT(11)      NOT NULL AUTO_INCREMENT,
@@ -38,13 +39,13 @@ CREATE TABLE IF NOT EXISTS `fields`
     INDEX `fk_fields_exercises1_idx` (`exercises_id` ASC),
     CONSTRAINT `fk_fields_exercises1`
         FOREIGN KEY (`exercises_id`)
-            REFERENCES `exercise_looper`.`exercises` (`id`)
+            REFERENCES `exercises` (`id`)
             ON DELETE NO ACTION
             ON UPDATE NO ACTION
 )
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
-DROP TABLE answers;
+DROP TABLE if exists answers;
 CREATE TABLE IF NOT EXISTS `answers`
 (
     `id`        INT(11) NOT NULL AUTO_INCREMENT,
