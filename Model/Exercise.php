@@ -42,7 +42,14 @@ class Exercise
 
     static function all(): array
     {
-        return DBConnector::selectMany("SELECT * FROM exercises;", []);
+        $result = DBConnector::selectMany("SELECT * FROM exercises;", []);
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make($res);
+        }
+        return $return;
+
+
     }
 
     static function find(int $id): ?Exercise
