@@ -1,4 +1,3 @@
-use the_looper;
 -- MySQL Workbench Synchronization
 -- Generated: 2021-09-29 15:22
 -- Model: Exercise_looper
