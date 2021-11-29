@@ -1,4 +1,3 @@
-use exercise_looper;
 -- --------------------------------------------------------
 -- Hôte:                         127.0.0.1
 -- Version du serveur:           10.5.10-MariaDB - mariadb.org binary distribution
