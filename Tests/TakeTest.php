@@ -15,7 +15,7 @@ class TakeTest extends TestCase
      */
     public function testAll()
     {
-        $this->assertEquals(9,count(Take::all()));
+        $this->assertEquals(10,count(Take::all()));
     }
 
     /**
