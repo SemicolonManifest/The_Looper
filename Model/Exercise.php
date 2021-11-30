@@ -21,8 +21,13 @@ class Exercise
 
     public function create(): bool
     {
-        $this->id = DBConnector::insert("INSERT INTO exercises (title, state)  values (:title, :state);", ['title' => $this->title, 'state' => $this->state]);
+        try {
+            $result = DBConnector::insert("INSERT INTO exercises (title, state)  values (:title, :state);", ['title' => $this->title, 'state' => $this->state]);
+        }catch (\PDOException $e){
+            return false;
+        }
 
+        $this->id = $result;
         return true;
     }
 

@@ -74,7 +74,7 @@ class DbConnector
             return $DB->lastInsertId();
         } catch (PDOException $e) {
             error_log($e->getMessage());
-            return null;
+            throw $e;
         }
 
     }
