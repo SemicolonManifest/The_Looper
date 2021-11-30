@@ -1,4 +1,3 @@
-use exercise_looper;
 -- --------------------------------------------------------
 -- Hôte:                         127.0.0.1
 -- Version du serveur:           10.5.10-MariaDB - mariadb.org binary distribution
@@ -12,6 +11,11 @@ use exercise_looper;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Listage de la structure de la base pour exercise_looper
+CREATE DATABASE IF NOT EXISTS `exercise_looper` /*!40100 DEFAULT CHARACTER SET utf32 COLLATE utf32_unicode_ci */;
+USE `exercise_looper`;
 
 -- Listage de la structure de la table exercise_looper. answers
 DROP TABLE IF EXISTS `answers`;
@@ -51,8 +55,9 @@ CREATE TABLE IF NOT EXISTS `exercises` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `state` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `exercises_title_unique` (`title`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table exercise_looper.exercises : ~3 rows (environ)
 /*!40000 ALTER TABLE `exercises` DISABLE KEYS */;
@@ -102,8 +107,7 @@ INSERT INTO `takes` (`id`, `time_stamp`) VALUES
 	(6, '2021-10-03 12:12:30'),
 	(7, '2021-10-03 12:32:30'),
 	(8, '2021-10-03 13:12:30'),
-	(9, '2021-10-03 13:32:30'),
-	(10, '2021-11-29 10:36:32');
+	(9, '2021-10-03 13:32:30');
 /*!40000 ALTER TABLE `takes` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
