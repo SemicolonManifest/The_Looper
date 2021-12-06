@@ -28,7 +28,7 @@
             </tbody>
         </table>
 
-        <a class="button answering"
+        <a class="button answering <?= count($exercise->fields()) > 0 ? "" : "disable" ?>"
            data-method="put" href="?action=answering&id=<?= $exercise->id ?>" onclick="return confirm('Are you sure?');"><i
                     class="fa fa-comment"></i> Complete and be ready for answers</a>
     </div>

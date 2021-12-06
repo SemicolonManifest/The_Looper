@@ -25,3 +25,9 @@ form {
 
 
 }
+
+.disable{
+ pointer-events: none;
+ cursor: default;
+ text-decoration: none;
+}

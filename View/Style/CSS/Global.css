@@ -111,6 +111,12 @@ form div {
   margin-bottom: 5px;
 }
 
+.disable {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
 #iconColumn {
   text-align: right;
 }
