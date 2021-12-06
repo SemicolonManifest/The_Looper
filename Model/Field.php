@@ -35,9 +35,26 @@ class Field
         }
     }
 
+    static function make(array $params)
+    {
+        $field = new Field($params['label'], $params['value_kind'], $params['exercises_id']);
+
+        if (isset($params['id'])) {
+            $field->id = $params['id'];
+        }
+
+        return $field;
+    }
+
     static function all(): array
     {
-        return DbConnector::selectMany("select * from fields;");
+        $result = DbConnector::selectMany("select * from fields;");
+
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make($res);
+        }
+        return $return;
     }
 
     static function find($id): ?Field
