@@ -36,7 +36,14 @@ class Take
 
     static function all(): array
     {
-        return DBConnector::selectmany("SELECT id, time_stamp FROM takes;", []);
+        $result = DBConnector::selectmany("SELECT id, time_stamp FROM takes;", []);
+
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make($res);
+        }
+        return $return;
+
     }
 
     static function find(int $id): ?Take
