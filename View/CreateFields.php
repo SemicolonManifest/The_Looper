@@ -28,8 +28,8 @@
             </tbody>
         </table>
 
-        <a class="button answering"
-           data-method="put" href="/exercises/441?exercise%5Bstatus%5D=answering"><i
+        <a class="button answering <?= count($exercise->fields()) > 0 ? "" : "disable" ?>"
+           data-method="put" href="?action=answering&id=<?= $exercise->id ?>" onclick="return confirm('Are you sure?');"><i
                     class="fa fa-comment"></i> Complete and be ready for answers</a>
     </div>
     <div class="column">

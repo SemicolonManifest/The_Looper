@@ -48,6 +48,7 @@ if (isset($_GET['action'])) {
             break;
         case 'fulfillExercise':
             ExerciseController::fulfill();
+            break;
         case 'createField':
             FieldController::createField();
             break;

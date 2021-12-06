@@ -36,7 +36,12 @@ class Answer
 
     static function all(): array
     {
-        return DBConnector::selectmany("SELECT id, response, fields_id, takes_id FROM answers;", []);
+        $result = DBConnector::selectmany("SELECT id, response, fields_id, takes_id FROM answers;", []);
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make(["id" => $res["id"], "response" => $res['response'], "field" => Field::find($res['fields_id']), "take" => Take::find($res['takes_id'])]);
+        }
+        return $return;
     }
 
     static function find(int $id): ?Answer
