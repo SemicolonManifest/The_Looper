@@ -28,8 +28,16 @@ class Answer
         }
 
         $answer->response = $params['response'];
-        $answer->field = $params['field'];
-        $answer->take = $params['take'];
+        if (isset($params['field'])) {
+            $answer->field = $params['field'];
+        }else{
+            $answer->field = Field::find($params['fields_id']);
+        }
+        if (isset($params['take'])) {
+            $answer->take = $params['take'];
+        }else{
+            $answer->take = Take::find($params['takes_id']);
+        }
 
         return $answer;
     }
@@ -38,8 +46,8 @@ class Answer
     {
         $result = DBConnector::selectmany("SELECT id, response, fields_id, takes_id FROM answers;", []);
         $return = [];
-        foreach ($result as $res){
-            $return[] = self::make(["id" => $res["id"], "response" => $res['response'], "field" => Field::find($res['fields_id']), "take" => Take::find($res['takes_id'])]);
+        foreach ($result as $res) {
+            $return[] = self::make($res);
         }
         return $return;
     }
