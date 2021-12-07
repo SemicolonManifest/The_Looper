@@ -153,6 +153,6 @@ class ExerciseController
 
         }
 
-        header('Location: ?action=?action=editFulfillment&id='.$take->id);
+        header('Location: ?action=showEditFulfillment&id='.$take->id);
     }
 }
