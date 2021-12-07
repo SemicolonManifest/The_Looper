@@ -13,8 +13,9 @@ use TheLooper\Model\FieldValueKind;
         <?php foreach ($answers as $answer): ?>
             <div class="field">
                 <label for="field_<?= ($answer->field->getId()) ?>"><?= ($answer->field->label) ?></label>
-                <<?php if ($answer->field->value_kind == FieldValueKind::LIST_OF_LINES || $answer->field->value_kind == FieldValueKind::MULTI_LINES): ?>textarea<?php else: ?>input type="text" <?php endif; ?> value="<?= $answer->response ?>"  name="fulfillments[<?= $answer->field->getId() ?>]"
-                                                                                                                                                                                                id="field_<?= $answer->field->getId(); ?>"><?php if ($answer->field->value_kind == FieldValueKind::LIST_OF_LINES || $answer->field->value_kind == FieldValueKind::MULTI_LINES): ?></textarea><?php endif; ?>
+
+                <<?php if ($answer->field->value_kind == FieldValueKind::LIST_OF_LINES || $answer->field->value_kind == FieldValueKind::MULTI_LINES): ?>textarea<?php else: ?>input type="text" value="<?= $answer->response ?>"<?php endif; ?>   name="fulfillments[<?= $answer->field->getId() ?>]"
+                                                                                                                                                                                                id="field_<?= $answer->field->getId(); ?>"><?php if ($answer->field->value_kind == FieldValueKind::LIST_OF_LINES || $answer->field->value_kind == FieldValueKind::MULTI_LINES): ?><?= $answer->response ?></textarea><?php endif; ?>
             </div>
 
         <?php endforeach; ?>
