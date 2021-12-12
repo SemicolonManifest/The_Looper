@@ -43,12 +43,12 @@ class TakeController
 
     static function edit()
     {
-        if (isset($_GET["take"]) && isset($_GET['answers']))
+        if (isset($_POST["take"]) && isset($_POST['answers']))
         {
-            $takeId = $_GET["take"];
+            $takeId = $_POST["take"];
             $_SESSION['saveSuccess'] = true;
 
-            foreach ($_GET['answers'] as $id => $answerValue){
+            foreach ($_POST['answers'] as $id => $answerValue){
                 $answer = Answer::find($id);
                 $answer->response = $answerValue;
                 if(!$answer->save()) $_SESSION['saveSuccess'] = false;
