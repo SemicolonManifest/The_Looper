@@ -16,7 +16,7 @@ class TakeController
         return Take::find($id);
     }
 
-    static function edit()
+    static function show()
     {
         if (isset($_GET["id"])) {
             $id = $_GET['id'];
