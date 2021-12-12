@@ -5,6 +5,17 @@ use TheLooper\Model\FieldValueKind;
 ?>
 <h1>Your take</h1>
 <p>If you'd like to come back later to finish, simply submit it with blanks.</p>
+<?php if (isset($_SESSION['saveSuccess'])): ?>
+    <?php if ($_SESSION['saveSuccess'] == true): ?>
+        <div class="alert alert-success" role="alert">
+            Save success!
+        </div>
+    <?php else: ?>
+        <div class="alert alert-danger" role="alert">
+            An error occurred during the save process.
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
 <form <?php if (isset($isEditing)): ?> action="?action=editFulfillment" <?php else: ?> action="?action=fulfillExercise" <?php endif; ?>
         accept-charset="UTF-8" method="post">
     <?php if (isset($isEditing)): ?>
@@ -15,7 +26,7 @@ use TheLooper\Model\FieldValueKind;
                 <label for="field_<?= ($answer->field->getId()) ?>"><?= ($answer->field->label) ?></label>
 
                 <<?php if ($answer->field->value_kind == FieldValueKind::LIST_OF_LINES || $answer->field->value_kind == FieldValueKind::MULTI_LINES): ?>textarea<?php else: ?>input type="text" value="<?= $answer->response ?>"<?php endif; ?>   name="answers[<?= $answer->id ?>]"
-                                                                                                                                                                                                id="field_<?= $answer->field->getId(); ?>"><?php if ($answer->field->value_kind == FieldValueKind::LIST_OF_LINES || $answer->field->value_kind == FieldValueKind::MULTI_LINES): ?><?= $answer->response ?></textarea><?php endif; ?>
+                                                                                                                                                                                                                                                  id="field_<?= $answer->field->getId(); ?>"><?php if ($answer->field->value_kind == FieldValueKind::LIST_OF_LINES || $answer->field->value_kind == FieldValueKind::MULTI_LINES): ?><?= $answer->response ?></textarea><?php endif; ?>
             </div>
 
         <?php endforeach; ?>
@@ -33,7 +44,6 @@ use TheLooper\Model\FieldValueKind;
 
         <?php endforeach; ?>
     <?php endif; ?>
-
 
 
     <div class="actions">
