@@ -24,10 +24,17 @@ class TakeController
             $isEditing = true;
             $take = Take::find($id);
             $answers = $take->answers();
+
             if(isset($_SESSION['saveSuccess']))
             {
                 $saveSuccess = $_SESSION['saveSuccess'];
                 unset($_SESSION['saveSuccess']);
+            }
+
+            if(isset($_SESSION['submitSuccess']))
+            {
+                $submitSuccess = $_SESSION['submitSuccess'];
+                unset($_SESSION['submitSuccess']);
             }
 
             include_once "View/FulfillExercise.php";
