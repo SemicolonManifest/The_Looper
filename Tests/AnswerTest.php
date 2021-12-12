@@ -54,16 +54,6 @@ class AnswerTest extends TestCase
     }
 
     /**
-     * @covers $Answer->save() doesn't allow duplicates
-     */
-    public function testSaveRejectsDuplicates()
-    {
-        $Answer = Answer::find(1);
-        $Answer->take = Answer::find(2)->take;
-        $this->assertFalse($Answer->save());
-    }
-
-    /**
      * @covers $Answer->delete()
      */
     public function testDelete()
