@@ -6,13 +6,24 @@ use TheLooper\Model\FieldValueKind;
 <h1>Your take</h1>
 <p>If you'd like to come back later to finish, simply submit it with blanks.</p>
 <?php if (isset($saveSuccess)): ?>
-    <?php if ($saveSuccess == true): ?>
+    <?php if ($saveSuccess): ?>
         <div class="alert alert-success" role="alert">
-            Save success!
+            Save successful!
         </div>
     <?php else: ?>
         <div class="alert alert-danger" role="alert">
             An error occurred during the save process.
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+<?php if (isset($submitSuccess)): ?>
+    <?php if ($submitSuccess): ?>
+        <div class="alert alert-success" role="alert">
+            Submit successful!
+        </div>
+    <?php else: ?>
+        <div class="alert alert-danger" role="alert">
+            An error occurred during the submit process.
         </div>
     <?php endif; ?>
 <?php endif; ?>
