@@ -5,8 +5,8 @@ use TheLooper\Model\FieldValueKind;
 ?>
 <h1>Your take</h1>
 <p>If you'd like to come back later to finish, simply submit it with blanks.</p>
-<?php if (isset($_SESSION['saveSuccess'])): ?>
-    <?php if ($_SESSION['saveSuccess'] == true): ?>
+<?php if (isset($saveSuccess)): ?>
+    <?php if ($saveSuccess == true): ?>
         <div class="alert alert-success" role="alert">
             Save success!
         </div>
