@@ -63,12 +63,6 @@ class Answer
 
     public function save(): bool
     {
-        $check = DbConnector::selectOne("SELECT * FROM answers WHERE response = :response", ['response' => $this->response]);
-
-        if (!empty($check)) {
-            return false;
-        }
-
         return DbConnector::execute("UPDATE answers set response = :response WHERE id = :id", ['id' => $this->id, 'response' => $this->response]);
     }
 
