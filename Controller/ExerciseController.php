@@ -91,6 +91,12 @@ class ExerciseController
             $exercise = Exercise::find($_GET['id']);
             $fields = $exercise->fields();
 
+            if(isset($_SESSION['submitSuccess']))
+            {
+                $submitSuccess = $_SESSION['submitSuccess'];
+                unset($_SESSION['submitSuccess']);
+            }
+
             include_once "View/FulfillExercise.php";
         } else {
             header("Location:?action=showAllExercises");
@@ -141,18 +147,23 @@ class ExerciseController
         $take = new Take();
         $take->create();
         $fulfillments = $_POST["fulfillments"];
+        $submitSuccess = true;
 
         foreach ($fulfillments as $id => $fulfillment){
             $answer = new Answer();
             $answer->field = Field::find($id);
             $answer->take = Take::find($take->id);
             $answer->response = $fulfillment;
-            $answer->create();
+            if(!$answer->create()) $submitSuccess = false;
+        }
+        $_SESSION['submitSuccess'] = $submitSuccess;
 
-
-
+        if($submitSuccess)
+        {
+            header('Location: ?action=showEditFulfillment&id='.$take->id);
+        }else{
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
 
-        header('Location: ?action=showEditFulfillment&id='.$take->id);
     }
 }
