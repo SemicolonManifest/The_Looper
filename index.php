@@ -60,6 +60,9 @@ if (isset($_GET['action'])) {
             FieldController::editField();
             break;
         case 'showEditFulfillment':
+            TakeController::show();
+            break;
+        case 'editFulfillment':
             TakeController::edit();
             break;
         default:
