@@ -24,7 +24,7 @@ class Field
     {
         if (isset($this->label) && isset($this->value_kind) && isset($this->exercises_id)) {
             try {
-                $res = DbConnector::insert("insert into exercise_looper.fields (label, value_kind, exercises_id) values (:label, :value_kind,:exercises_id )", ["label" => $this->label, "value_kind" => $this->value_kind, "exercises_id" => $this->exercises_id]);
+                $res = DbConnector::insert("insert into fields (label, value_kind, exercises_id) values (:label, :value_kind,:exercises_id )", ["label" => $this->label, "value_kind" => $this->value_kind, "exercises_id" => $this->exercises_id]);
                 $this->id = $res;
                 return isset($this->id);
             } catch (PDOException $e) {
