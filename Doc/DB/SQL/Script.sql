@@ -12,12 +12,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Listage de la structure de la base pour exercise_looper
-CREATE DATABASE IF NOT EXISTS `exercise_looper` /*!40100 DEFAULT CHARACTER SET utf32 COLLATE utf32_unicode_ci */;
-USE `exercise_looper`;
-
--- Listage de la structure de la table exercise_looper. answers
+-- Listage de la structure de la table answers
 DROP TABLE IF EXISTS `answers`;
 CREATE TABLE IF NOT EXISTS `answers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -32,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
   CONSTRAINT `fk_answers_takes1` FOREIGN KEY (`takes_id`) REFERENCES `takes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table exercise_looper.answers : ~12 rows (environ)
+-- Listage des données de la table answers : ~12 rows (environ)
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
 INSERT INTO `answers` (`id`, `response`, `fields_id`, `takes_id`) VALUES
 	(1, 'parce que', 1, 1),
@@ -49,7 +44,7 @@ INSERT INTO `answers` (`id`, `response`, `fields_id`, `takes_id`) VALUES
 	(12, 'nbdfbdaull', 4, 9);
 /*!40000 ALTER TABLE `answers` ENABLE KEYS */;
 
--- Listage de la structure de la table exercise_looper. exercises
+-- Listage de la structure de la table exercises
 DROP TABLE IF EXISTS `exercises`;
 CREATE TABLE IF NOT EXISTS `exercises` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `exercises` (
   UNIQUE KEY `exercises_title_unique` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table exercise_looper.exercises : ~3 rows (environ)
+-- Listage des données de la table exercises : ~3 rows (environ)
 /*!40000 ALTER TABLE `exercises` DISABLE KEYS */;
 INSERT INTO `exercises` (`id`, `title`, `state`) VALUES
 	(1, 'Pourquoi la vie', 0),
@@ -67,7 +62,7 @@ INSERT INTO `exercises` (`id`, `title`, `state`) VALUES
 	(3, 'Pourquoi les zombies', 2);
 /*!40000 ALTER TABLE `exercises` ENABLE KEYS */;
 
--- Listage de la structure de la table exercise_looper. fields
+-- Listage de la structure de la table fields
 DROP TABLE IF EXISTS `fields`;
 CREATE TABLE IF NOT EXISTS `fields` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `fields` (
   CONSTRAINT `fk_fields_exercises1` FOREIGN KEY (`exercises_id`) REFERENCES `exercises` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table exercise_looper.fields : ~4 rows (environ)
+-- Listage des données de la table fields : ~4 rows (environ)
 /*!40000 ALTER TABLE `fields` DISABLE KEYS */;
 INSERT INTO `fields` (`id`, `label`, `value_kind`, `exercises_id`) VALUES
 	(1, 'Pourquoi les humains existent ?', 0, 1),
@@ -88,7 +83,7 @@ INSERT INTO `fields` (`id`, `label`, `value_kind`, `exercises_id`) VALUES
 	(4, 'Comment ça peut exister ?', 2, 3);
 /*!40000 ALTER TABLE `fields` ENABLE KEYS */;
 
--- Listage de la structure de la table exercise_looper. takes
+-- Listage de la structure de la table takes
 DROP TABLE IF EXISTS `takes`;
 CREATE TABLE IF NOT EXISTS `takes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
