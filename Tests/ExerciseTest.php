@@ -36,7 +36,6 @@ class ExerciseTest extends TestCase
         $exercise->title = "UnitTest";
         $exercise->state = 1;
         $this->assertTrue($exercise->create());
-        $this->assertFalse($exercise->create());
     }
 
     /**

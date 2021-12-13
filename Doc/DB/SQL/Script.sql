@@ -50,8 +50,7 @@ CREATE TABLE IF NOT EXISTS `exercises` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `state` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `exercises_title_unique` (`title`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table exercises : ~3 rows (environ)
