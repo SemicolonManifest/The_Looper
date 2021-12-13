@@ -3,6 +3,8 @@ namespace TheLooper;
 use TheLooper\Controller\ExerciseController;
 use TheLooper\Controller\FieldController;
 use TheLooper\Controller\MainController;
+use TheLooper\Controller\TakeController;
+use TheLooper\Model\Take;
 
 session_start();
 date_default_timezone_set('Europe/Zurich');
@@ -57,6 +59,12 @@ if (isset($_GET['action'])) {
             break;
         case 'editField':
             FieldController::editField();
+            break;
+        case 'showEditFulfillment':
+            TakeController::show();
+            break;
+        case 'editFulfillment':
+            TakeController::edit();
             break;
         default:
             MainController::showHome();
