@@ -5,9 +5,9 @@ ob_start();
         <section class="container">
             <a href="?"><img id="Logo" src="View/Style/Assets/logo.png"></a>
             <?php if (isset($exercise)) { ?>
-                <a>Exercise : <span><?= $exercise->title ?></span></a>
+                <a style="text-decoration: none" class="text-white">Exercise : <b><?= $exercise->title ?></b></a>
             <?php } else { ?>
-                <a>Exercise</a>
+                <a style="text-decoration: none" class="text-white">Exercise</a>
             <?php } ?>
         </section>
     </header>
