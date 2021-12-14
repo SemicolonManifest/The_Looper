@@ -12,11 +12,9 @@ class TakeController
     {
     }
 
-    public function find(int $id)
-    {
-        return Take::find($id);
-    }
-
+    /**
+     * @description Display view to answer the fields of an exercise
+     */
     static function show()
     {
         if (isset($_GET["id"])) {
@@ -45,9 +43,11 @@ class TakeController
         $contenu = ob_get_clean();
 
         require dirname(__DIR__, 1) . "/View/Layout.php";
-
     }
 
+    /**
+     * @description Edit answer
+     */
     static function edit()
     {
         if (isset($_POST["take"]) && isset($_POST['answers']))
