@@ -56,5 +56,11 @@ input.button {
   color: $answering;
 }
 
+.disable{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  background-color: $hover !important;
 
+}
 

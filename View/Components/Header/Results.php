@@ -5,7 +5,7 @@ ob_start();
         <section class="container">
             <a href="?"><img id="Logo" src="View/Style/Assets/logo.png"></a>
             <?php if ($_GET['action'] == "showStatExercise" || $_GET['action'] == "showStatExerciseByField" || $_GET['action'] == "showStatExerciseByTake"  ) { ?>
-                <a>Exercise : <span><?= $exercise->title ?></span></a>
+                <a  style="text-decoration: none" class="text-white">Exercise : <b><?= $exercise->title ?></b></a>
             <?php } ?>
         </section>
     </header>
