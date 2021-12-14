@@ -58,7 +58,7 @@ class ExerciseController
     }
 
     /**
-     * @description Display view to list stats of a exercise
+     * @description Display view to list stats of an exercise
      */
     public static function showStatExercise()
     {
@@ -74,7 +74,7 @@ class ExerciseController
     }
 
     /**
-     * @description Display view to list stats by a field of a exercise
+     * @description Display view to list stats by a field of an exercise
      */
     public static function showStatExerciseByField()
     {
@@ -89,7 +89,7 @@ class ExerciseController
     }
 
     /**
-     * @description Display view to list stats by a take of a exercise
+     * @description Display view to list stats by a take of an exercise
      */
     public static function showStatExerciseByTake()
     {
@@ -104,7 +104,7 @@ class ExerciseController
     }
 
     /**
-     * @description Display view to fill fields for a exercise
+     * @description Display view to fill fields for an exercise
      */
     public static function showExercise()
     {
@@ -130,7 +130,7 @@ class ExerciseController
     }
 
     /**
-     * @description Display view to list stats by a field of a exercise
+     * @description Change state building to answering
      */
     public static function answering()
     {
@@ -142,6 +142,9 @@ class ExerciseController
         ExerciseController::showManageExercise();
     }
 
+    /**
+     * @description Change state answering to closed
+     */
     public static function closed()
     {
         // TODO - rename closed() function
@@ -151,6 +154,9 @@ class ExerciseController
         ExerciseController::showManageExercise();
     }
 
+    /**
+     * @description Delete an exercise
+     */
     public static function deleteExercise()
     {
         $exercise = Exercise::find($_GET['id']);
@@ -168,6 +174,9 @@ class ExerciseController
         header('Location: ?action=showManageExercise');
     }
 
+    /**
+     * @description Add answers for an exercise
+     */
     public static function fulfill()
     {
         $take = new Take();

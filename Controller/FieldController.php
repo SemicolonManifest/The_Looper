@@ -11,6 +11,9 @@ class FieldController
     {
     }
 
+    /**
+     * @description Display view to create a field
+     */
     public static function showCreateField()
     {
         ob_start();
@@ -31,6 +34,9 @@ class FieldController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to edit a field
+     */
     public static function showEditField()
     {
         ob_start();
@@ -45,6 +51,9 @@ class FieldController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Method to create a field
+     */
     public static function createField()
     {
         ob_start();
@@ -62,6 +71,9 @@ class FieldController
 
     }
 
+    /**
+     * @description Method to delete a field
+     */
     public static function deleteField()
     {
         $field = Field::find($_GET['id']);
@@ -69,6 +81,9 @@ class FieldController
         header('Location: ?action=showCreateField&id=' . $_GET['exercise_id']);
     }
 
+    /**
+     * @description Method to edit a field
+     */
     public static function editField()
     {
         $field = Field::find($_GET['field_id']);
