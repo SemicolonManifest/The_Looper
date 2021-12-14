@@ -1,5 +1,7 @@
 <?php
+
 namespace TheLooper\Controller;
+
 use TheLooper\Model\Answer;
 use TheLooper\Model\Exercise;
 use TheLooper\Model\ExerciseState;
@@ -9,13 +11,16 @@ use TheLooper\Model\Take;
 class ExerciseController
 {
 
-    public function __construct(){
+    public function __construct()
+    {
 
     }
 
+    /**
+     * @description Display view to create an exercise
+     */
     public static function showCreateExercise()
     {
-
         ob_start();
         include_once "View/CreateExercise.php";
         $headerPath = "Components/Header/Managing.php";
@@ -24,6 +29,9 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to list all exercises in Answering
+     */
     public static function showAllExercises()
     {
         ob_start();
@@ -35,6 +43,9 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to list all exercises by state
+     */
     public static function showManageExercise()
     {
         ob_start();
@@ -46,6 +57,9 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to list stats of a exercise
+     */
     public static function showStatExercise()
     {
         ob_start();
@@ -59,6 +73,9 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to list stats by a field of a exercise
+     */
     public static function showStatExerciseByField()
     {
         ob_start();
@@ -71,6 +88,9 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to list stats by a take of a exercise
+     */
     public static function showStatExerciseByTake()
     {
         ob_start();
@@ -83,6 +103,9 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to fill fields for a exercise
+     */
     public static function showExercise()
     {
         ob_start();
@@ -91,8 +114,7 @@ class ExerciseController
             $exercise = Exercise::find($_GET['id']);
             $fields = $exercise->fields();
 
-            if(isset($_SESSION['submitSuccess']))
-            {
+            if (isset($_SESSION['submitSuccess'])) {
                 $submitSuccess = $_SESSION['submitSuccess'];
                 unset($_SESSION['submitSuccess']);
             }
@@ -107,6 +129,9 @@ class ExerciseController
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
 
+    /**
+     * @description Display view to list stats by a field of a exercise
+     */
     public static function answering()
     {
         // TODO - Rename answering() function
@@ -143,25 +168,25 @@ class ExerciseController
         header('Location: ?action=showManageExercise');
     }
 
-    public static  function fulfill(){
+    public static function fulfill()
+    {
         $take = new Take();
         $take->create();
         $fulfillments = $_POST["fulfillments"];
         $submitSuccess = true;
 
-        foreach ($fulfillments as $id => $fulfillment){
+        foreach ($fulfillments as $id => $fulfillment) {
             $answer = new Answer();
             $answer->field = Field::find($id);
             $answer->take = Take::find($take->id);
             $answer->response = $fulfillment;
-            if(!$answer->create()) $submitSuccess = false;
+            if (!$answer->create()) $submitSuccess = false;
         }
         $_SESSION['submitSuccess'] = $submitSuccess;
 
-        if($submitSuccess)
-        {
-            header('Location: ?action=showEditFulfillment&id='.$take->id);
-        }else{
+        if ($submitSuccess) {
+            header('Location: ?action=showEditFulfillment&id=' . $take->id);
+        } else {
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
 
