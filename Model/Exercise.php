@@ -10,10 +10,9 @@ class Exercise
     public string $title;
     public int $state = 0;
 
-    public function __construct(string $title = "", int $id = -1, int $state = -1, array $fields = [])
+    public function __construct(string $title = "", int $id = -1, int $state = -1)
     {
         $this->title = $title;
-        $this->fields = $fields;
         if ($id != -1) $this->id = $id;
         if ($state != -1) $this->$state = $state;
     }

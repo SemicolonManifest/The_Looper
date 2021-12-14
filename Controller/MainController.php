@@ -17,7 +17,9 @@ class MainController
     }
 
 
-
+    /** @description This function is used to display the home page
+     *  @return void
+     */
     public static function showHome()
     {
         ob_start();
@@ -29,9 +31,5 @@ class MainController
 
         require dirname(__DIR__, 1) . "/View/Layout.php";
     }
-
-
-//TODO change title header style
-
 
 }
