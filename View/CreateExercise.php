@@ -1,5 +1,10 @@
 
         <h1 class="text">New Exercise</h1>
+        <?php if(isset($error)): ?>
+            <div class="alert alert-danger" role="alert">
+                <?=$error ?>
+            </div>
+        <?php endif; ?>
         <form action="?action=showCreateField" method="post">
         <div class="field">
             <label for="exercise_title">Title</label>

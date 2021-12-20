@@ -22,6 +22,10 @@ class ExerciseController
     public static function showCreateExercise()
     {
         ob_start();
+        if (isset($_SESSION['error'])) {
+            $error = $_SESSION['error'];
+            unset($_SESSION['error']);
+        }
         include_once "View/CreateExercise.php";
         $headerPath = "Components/Header/Managing.php";
         $contenu = ob_get_clean();

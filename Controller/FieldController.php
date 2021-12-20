@@ -20,8 +20,13 @@ class FieldController
         $exercise = new Exercise();
 
         if (isset($_POST['exercise']['title'])) {
-            $exercise->title = $_POST['exercise']['title'];
-            $exercise->create();
+            if($_POST['exercise']['title'] != "") {
+                $exercise->title = $_POST['exercise']['title'];
+                $exercise->create();
+            }else{
+                $_SESSION['error'] = "Title can not be empty";
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+            }
         } else {
             $exercise = Exercise::find($_GET['id']);
         }
