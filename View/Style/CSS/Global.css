@@ -91,6 +91,13 @@ input.button {
   color: #9b4dca;
 }
 
+.disable {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  background-color: #606c76 !important;
+}
+
 form .input {
   border: 0.1rem solid #d1d1d1;
   border-radius: 0.4rem;

@@ -1,6 +1,4 @@
-<?php
-ob_start();
-?>
+
         <h1 class="text">New Exercise</h1>
         <form action="?action=showCreateField" method="post">
         <div class="field">
@@ -12,10 +10,3 @@ ob_start();
         </div>
         </form>
 
-
-
-<?php
-$headerPath = "Components/Header/Managing.php";
-$contenu = ob_get_clean();
-
-require "Layout.php";

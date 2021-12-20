@@ -1,6 +1,4 @@
-<?php
-ob_start();
-?>
+
     <section class="row">
         <div class="column">
             <h1>Building</h1>
@@ -12,16 +10,17 @@ ob_start();
                 </thead>
                 <tbody>
                 <?php foreach ($exercises as $exercise) {
-                    if ($exercise['state'] == \TheLooper\Model\ExerciseState::BUILDING) {
+                    if ($exercise->state == \TheLooper\Model\ExerciseState::BUILDING) {
                         ?>
                         <tr>
                             <td>
-                                <p class="text"><?= $exercise['title'] ?></p>
+                                <p class="text"><?= $exercise->title ?></p>
                             </td>
                             <td id="iconColumn">
-                                <a class="icon" href="?action=answering&id=<?= $exercise['id'] ?>"><i class="fa fa-comment"></i></a>
-                                <a class="icon" href="?action=manageField&id=<?= $exercise['id'] ?>"><i class="fa fa-edit"></i></a>
-                                <a class="icon" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
+                                <?= (count($exercise->fields()) > 0) ? '<a class="icon" href="?action=answering&id='.$exercise->id.'"><i class="fa fa-comment"></i></a>' : "" ?>
+
+                                <a class="icon" href="?action=showCreateField&id=<?= $exercise->id ?>"><i class="fa fa-edit"></i></a>
+                                <a class="icon"  onclick="return confirm('Are you sure?');"  href="?action=deleteExercise&id=<?= $exercise->id ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php }
@@ -39,15 +38,15 @@ ob_start();
                 </thead>
                 <tbody>
                 <?php foreach ($exercises as $exercise) {
-                    if ($exercise['state'] == \TheLooper\Model\ExerciseState::ANSWERING) {
+                    if ($exercise->state == \TheLooper\Model\ExerciseState::ANSWERING) {
                         ?>
                         <tr>
                             <td>
-                                <p class="text"><?= $exercise['title'] ?></p>
+                                <p class="text"><?= $exercise->title ?></p>
                             </td>
                             <td id="iconColumn">
-                                <a class="icon" href="?action=showStatExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
-                                <a class="icon" href="?action=closed&id=<?= $exercise['id'] ?>"><i class="fa fa-minus-circle"></i></a>
+                                <a class="icon" href="?action=showStatExercise&id=<?= $exercise->id ?>"><i class="fa fa-chart-bar"></i></a>
+                                <a class="icon" href="?action=closed&id=<?= $exercise->id ?>"><i class="fa fa-minus-circle"></i></a>
                             </td>
                         </tr>
                     <?php }
@@ -64,28 +63,22 @@ ob_start();
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($exercises as $exercise) {
-                    if ($exercise['state'] == \TheLooper\Model\ExerciseState::CLOSED) {
+                <?php foreach ($exercises as $exercise):
+                    if ($exercise->state == \TheLooper\Model\ExerciseState::CLOSED):
                         ?>
                         <tr>
                             <td>
-                                <p class="text"><?= $exercise['title'] ?></p>
+                                <p class="text"><?= $exercise->title ?></p>
                             </td>
                             <td id="iconColumn">
-                                <a class="icon" href="?action=showStatExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-chart-bar"></i></a>
-                                <a class="icon" href="?action=deleteExercise&id=<?= $exercise['id'] ?>"><i class="fa fa-trash"></i></a>
+                                <a class="icon" href="?action=showStatExercise&id=<?= $exercise->id ?>"><i class="fa fa-chart-bar"></i></a>
+                                <a class="icon" onclick="return confirm('Are you sure?');" href="?action=deleteExercise&id=<?= $exercise->id ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
-                    <?php }
-                } ?>
+                    <?php endif;
+                    endforeach;
+                 ?>
                 </tbody>
             </table>
         </div>
     </section>
-
-
-<?php
-$headerPath = "Components/Header/Results.php";
-$contenu = ob_get_clean();
-
-require "Layout.php";

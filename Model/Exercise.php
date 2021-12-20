@@ -1,6 +1,7 @@
 <?php
 
 namespace TheLooper\Model;
+use TheLooper\Model\DbConnector;
 
 class Exercise
 {
@@ -8,26 +9,23 @@ class Exercise
     public int $id;
     public string $title;
     public int $state = 0;
-    public array $fields;
 
-    public function __construct(string $title = "", int $id = -1, int $state = -1, array $fields = [])
+    public function __construct(string $title = "", int $id = -1, int $state = -1)
     {
         $this->title = $title;
-        $this->fields = $fields;
         if ($id != -1) $this->id = $id;
         if ($state != -1) $this->$state = $state;
     }
 
     public function create(): bool
     {
-        $check = DbConnector::selectOne("SELECT * FROM exercises WHERE title = :title", ['title' => $this->title]);
-
-        if (!empty($check)) {
+        try {
+            $result = DBConnector::insert("INSERT INTO exercises (title, state)  values (:title, :state);", ['title' => $this->title, 'state' => $this->state]);
+        }catch (\PDOException $e){
             return false;
         }
 
-        $this->id = DBConnector::insert("INSERT INTO exercises (title, state)  values (:title, :state);", ['title' => $this->title, 'state' => $this->state]);
-
+        $this->id = $result;
         return true;
     }
 
@@ -47,7 +45,14 @@ class Exercise
 
     static function all(): array
     {
-        return DBConnector::selectMany("SELECT * FROM exercises;", []);
+        $result = DBConnector::selectMany("SELECT * FROM exercises;", []);
+        $return = [];
+        foreach ($result as $res){
+            $return[] = self::make($res);
+        }
+        return $return;
+
+
     }
 
     static function find(int $id): ?Exercise
@@ -64,14 +69,15 @@ class Exercise
 
     public function save(): bool
     {
-        $check = DbConnector::selectOne("SELECT * FROM exercises WHERE title = :title", ['title' => $this->title]);
+        $check = DbConnector::selectOne("SELECT * FROM exercises WHERE id = :id", ['id' => $this->id]);
 
-        if (!empty($check)) {
+        if (empty($check)) {
             return false;
         }
 
         return DbConnector::execute("UPDATE exercises set title = :title, state = :state WHERE id = :id", ['id' => $this->id, 'title' => $this->title, 'state' => $this->state]);
     }
+
 
     public function delete(): bool
     {
@@ -90,7 +96,7 @@ class Exercise
 
     public function fields(): array
     {
-        $fields = Field::where("exercises_id",$this->id);
+        $fields = Field::where("exercises_id", $this->id);
         return $fields;
     }
 

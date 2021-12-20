@@ -1,9 +1,7 @@
-<?php
-ob_start();
-?>
+
     <section class="row">
         <div class="column">
-            <h1><?= $take->timeStamp ?></h1>
+            <h1><?= $take->timeStamp->format('Y-m-d H:i:s') ?> UTC</h1>
             <table class="table">
                 <thead>
                 <tr>
@@ -18,7 +16,7 @@ ob_start();
                 <?php foreach ($exercise->fields() as $field) : ?>
                     <?php foreach ($field->takes() as $take) : ?>
                         <?php foreach ($take->answers() as $answer) : ?>
-                        <?php if($answer->take== $_GET['take'] && $answer->field == $field->getId()): ?>
+                        <?php if($answer->take->id== $_GET['take'] && $answer->field->getId() == $field->getId()): ?>
                             <tr>
                                 <td>
                                     <a><?= $field->label ?></a>
@@ -38,8 +36,3 @@ ob_start();
     </section>
 
 
-<?php
-$headerPath = "Components/Header/Results.php";
-$contenu = ob_get_clean();
-
-require "Layout.php";

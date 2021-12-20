@@ -4,6 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 class ExerciseTest extends TestCase
 {
+    static function setUpBeforeClass(): void
+    {
+        $sqlscript = file_get_contents(dirname(__DIR__, 1) . '/Doc/DB/SQL/Script.sql');
+        DbConnector::execute($sqlscript);
+    }
+
     /**
      * @covers Exercise::all()
      */
@@ -30,7 +36,6 @@ class ExerciseTest extends TestCase
         $exercise->title = "UnitTest";
         $exercise->state = 1;
         $this->assertTrue($exercise->create());
-        $this->assertFalse($exercise->create());
     }
 
     /**
@@ -45,16 +50,6 @@ class ExerciseTest extends TestCase
         $this->assertEquals("newname",Exercise::find(1)->title);
         $exercise->title = $savetitle;
         $exercise->save();
-    }
-
-    /**
-     * @covers $exercise->save() doesn't allow duplicates
-     */
-    public function testSaveRejectsDuplicates()
-    {
-        $exercise = Exercise::find(1);
-        $exercise->title = Exercise::find(2)->title;
-        $this->assertFalse($exercise->save());
     }
 
     /**

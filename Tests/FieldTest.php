@@ -9,7 +9,7 @@ class FieldTest extends TestCase
 
     static function setUpBeforeClass(): void
     {
-        $sqlscript = file_get_contents(dirname(__DIR__,1).'/Doc/DB/MPD/MPD.sql');
+        $sqlscript = file_get_contents(dirname(__DIR__, 1) . '/Doc/DB/SQL/Script.sql');
         DbConnector::execute($sqlscript);
     }
 
@@ -38,6 +38,17 @@ class FieldTest extends TestCase
     public function testCreate(){
         $field = new Field("Par ce que les grilles pains",FieldValueKind::SINGLE_LINE,1);
         $this->assertTrue($field->create());
+    }
+
+    public function testSave()
+    {
+        $field = Field::find(1);
+        $saveField = $field->label;
+        $field->label = "testLabel";
+        $this->assertTrue($field->save());
+        $this->assertEquals("testLabel",Field::find(1)->label);
+        $field->label = $saveField;
+        $field->save();
     }
 
     /**

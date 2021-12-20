@@ -13,7 +13,7 @@ class DbConnector
         $DB = null;
 
         try{
-            require __DIR__.'/.env.php';
+            require dirname(__DIR__,1) . '/Config/.env.php';
             $DB = new PDO($DSN,$USERNAME,$PASSWORD);
         }catch(Exception $exception){
             throw new Exception("An exception has occurred when trying to connect to the database!");
@@ -74,7 +74,7 @@ class DbConnector
             return $DB->lastInsertId();
         } catch (PDOException $e) {
             error_log($e->getMessage());
-            return null;
+            throw $e;
         }
 
     }

@@ -4,6 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 class AnswerTest extends TestCase
 {
+    static function setUpBeforeClass(): void
+    {
+        $sqlscript = file_get_contents(dirname(__DIR__, 1) . '/Doc/DB/SQL/Script.sql');
+        DbConnector::execute($sqlscript);
+    }
+
     /**
      * @covers Answer::all()
      */
@@ -28,10 +34,9 @@ class AnswerTest extends TestCase
     {
         $Answer = new Answer();
         $Answer->response = "UnitTest";
-        $Answer->field = 3;
-        $Answer->take = 2;
+        $Answer->field = Field::find(3);
+        $Answer->take = Take::find(2);
         $this->assertTrue($Answer->create());
-        $this->assertFalse($Answer->create());
     }
 
     /**
@@ -49,21 +54,11 @@ class AnswerTest extends TestCase
     }
 
     /**
-     * @covers $Answer->save() doesn't allow duplicates
-     */
-    public function testSaveRejectsDuplicates()
-    {
-        $Answer = Answer::find(1);
-        $Answer->take = Answer::find(2)->take;
-        $this->assertFalse($Answer->save());
-    }
-
-    /**
      * @covers $Answer->delete()
      */
     public function testDelete()
     {
-        $Answer = Answer::make(['response' => "PHPUnit", 'field' => 3, 'take' => 3]);
+        $Answer = Answer::make(['response' => "PHPUnit", 'field' => Field::find(3), 'take' => Take::find(3)]);
         $Answer->create();
         $id = $Answer->id;
         $this->assertTrue($Answer->delete()); // expected to succeed
@@ -75,7 +70,7 @@ class AnswerTest extends TestCase
      */
     public function testDestroy()
     {
-        $Answer = Answer::make(['response' => "PHPUnit", 'field' => 3, 'take' => 3]);
+        $Answer = Answer::make(['response' => "PHPUnit", 'field' => Field::find(3), 'take' => Take::find(3)]);
         $Answer->create();
         $id = $Answer->id;
         $this->assertTrue(Answer::destroy($id)); // expected to succeed
