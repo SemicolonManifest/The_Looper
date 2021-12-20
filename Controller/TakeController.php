@@ -17,6 +17,7 @@ class TakeController
      */
     static function show()
     {
+        ob_start();
         if (isset($_GET["id"])) {
             $id = $_GET['id'];
             $isEditing = true;
