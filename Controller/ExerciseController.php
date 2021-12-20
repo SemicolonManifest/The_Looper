@@ -134,7 +134,6 @@ class ExerciseController
      */
     public static function answering()
     {
-        // TODO - Rename answering() function
         // can not understand what it's doing without going to it's code and the code that use it
         $exercise = Exercise::find($_GET['id']);
         $exercise->state = ExerciseState::ANSWERING;
@@ -147,7 +146,6 @@ class ExerciseController
      */
     public static function closed()
     {
-        // TODO - rename closed() function
         $exercise = Exercise::find($_GET['id']);
         $exercise->state = ExerciseState::CLOSED;
         $exercise->save();
