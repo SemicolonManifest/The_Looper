@@ -20,7 +20,7 @@ class Exercise
     public function create(): bool
     {
         try {
-            $result = DBConnector::insert("INSERT INTO exercises (title, state)  values (:title, :state);", ['title' => $this->title, 'state' => $this->state]);
+            $result = DbConnector::insert("INSERT INTO exercises (title, state)  values (:title, :state);", ['title' => $this->title, 'state' => $this->state]);
         }catch (\PDOException $e){
             return false;
         }
@@ -45,7 +45,7 @@ class Exercise
 
     static function all(): array
     {
-        $result = DBConnector::selectMany("SELECT * FROM exercises;", []);
+        $result = DbConnector::selectMany("SELECT * FROM exercises;", []);
         $return = [];
         foreach ($result as $res){
             $return[] = self::make($res);
@@ -87,7 +87,7 @@ class Exercise
     static function destroy(int $id): bool
     {
         try {
-            DBConnector::execute("DELETE FROM exercises WHERE id = :id", ['id' => $id]);
+            DbConnector::execute("DELETE FROM exercises WHERE id = :id", ['id' => $id]);
             return true;
         } catch (\Throwable $th) {
             return false;

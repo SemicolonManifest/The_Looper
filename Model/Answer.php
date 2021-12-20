@@ -14,7 +14,7 @@ class Answer
      */
     public function create(): bool
     {
-        $this->id = DBConnector::insert("INSERT INTO answers (response, fields_id, takes_id) values (:response, :fields_id, :takes_id);", ['response' => $this->response, 'fields_id' => $this->field->getId(), 'takes_id' => $this->take->id]);
+        $this->id = DbConnector::insert("INSERT INTO answers (response, fields_id, takes_id) values (:response, :fields_id, :takes_id);", ['response' => $this->response, 'fields_id' => $this->field->getId(), 'takes_id' => $this->take->id]);
 
         return true;
     }
@@ -51,7 +51,7 @@ class Answer
      */
     static function all(): array
     {
-        $result = DBConnector::selectmany("SELECT id, response, fields_id, takes_id FROM answers;", []);
+        $result = DbConnector::selectmany("SELECT id, response, fields_id, takes_id FROM answers;", []);
         $return = [];
         foreach ($result as $res) {
             $return[] = self::make($res);
@@ -113,7 +113,7 @@ class Answer
     static function destroy(int $id): bool
     {
         try {
-            DBConnector::execute("DELETE FROM answers WHERE id = :id", ['id' => $id]);
+            DbConnector::execute("DELETE FROM answers WHERE id = :id", ['id' => $id]);
             return true;
         } catch (\Throwable $th) {
             return false;
