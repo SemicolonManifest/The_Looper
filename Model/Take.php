@@ -14,7 +14,7 @@ class Take
      */
     public function create(): bool
     {
-        $this->id = DBConnector::insert("INSERT INTO takes values ();");
+        $this->id = DbConnector::insert("INSERT INTO takes values ();");
 
         return true;
     }
@@ -41,7 +41,7 @@ class Take
      */
     static function all(): array
     {
-        $result = DBConnector::selectmany("SELECT id, time_stamp FROM takes;", []);
+        $result = DbConnector::selectmany("SELECT id, time_stamp FROM takes;", []);
 
         $return = [];
         foreach ($result as $res){
@@ -97,7 +97,7 @@ class Take
     static function destroy(int $id): bool
     {
         try {
-            DBConnector::execute("DELETE FROM takes WHERE id = :id", ['id' => $id]);
+            DbConnector::execute("DELETE FROM takes WHERE id = :id", ['id' => $id]);
             return true;
         } catch (\Throwable $th) {
             return false;
