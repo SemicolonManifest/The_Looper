@@ -3,7 +3,6 @@
 namespace TheLooper\Controller;
 
 use TheLooper\Model\Answer;
-use TheLooper\Model\Exercise;
 use TheLooper\Model\Take;
 
 class TakeController
