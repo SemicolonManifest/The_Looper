@@ -17,6 +17,10 @@ class Exercise
         if ($state != -1) $this->$state = $state;
     }
 
+    /**@description Method to create an Exercise
+     * @return bool
+     * @throws \Exception Can throw exception in case of issue
+     */
     public function create(): bool
     {
         try {
@@ -29,6 +33,10 @@ class Exercise
         return true;
     }
 
+    /** @description Method to make an Exercise object
+     * @param array $params Parameters
+     * @return Exercise
+     */
     static function make(array $params)
     {
         $exercise = new Exercise();
@@ -43,6 +51,9 @@ class Exercise
         return $exercise;
     }
 
+    /** @description Method to get all Exercises as Object
+     * @return array Array of Exercises
+     */
     static function all(): array
     {
         $result = DbConnector::selectMany("SELECT * FROM exercises;", []);
@@ -55,6 +66,10 @@ class Exercise
 
     }
 
+    /** @description Method to find an Exercise with it's ID
+     * @param int $id
+     * @return Exercise|null
+     */
     static function find(int $id): ?Exercise
     {
         $res = DbConnector::selectOne("SELECT * FROM exercises WHERE id = :id", ['id' => $id]);
@@ -67,6 +82,9 @@ class Exercise
 
     }
 
+    /** @description Method to save an Exercise
+     * @return bool
+     */
     public function save(): bool
     {
         $check = DbConnector::selectOne("SELECT * FROM exercises WHERE id = :id", ['id' => $this->id]);
@@ -78,12 +96,18 @@ class Exercise
         return DbConnector::execute("UPDATE exercises set title = :title, state = :state WHERE id = :id", ['id' => $this->id, 'title' => $this->title, 'state' => $this->state]);
     }
 
-
+    /** @description Method to  this Exercise
+     * @return bool
+     */
     public function delete(): bool
     {
         return self::destroy($this->id);
     }
 
+    /** @description Method to destroy an Exercise by it's ID
+     * @param int $id
+     * @return bool
+     */
     static function destroy(int $id): bool
     {
         try {
@@ -94,6 +118,9 @@ class Exercise
         }
     }
 
+    /** @description Method to get an array of Fields of the Exercise
+     * @return array
+     */
     public function fields(): array
     {
         $fields = Field::where("exercises_id", $this->id);
