@@ -47,7 +47,7 @@ class Field
     }
 
     /**
-     * @description Method to an object Field
+     * @description Method to make an object Field
      * @param array $params
      * @return Field
      */
