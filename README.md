@@ -5,6 +5,9 @@ The objective of this project is to make a copy of a given website.
 
 The said website: https://stormy-plateau-54488.herokuapp.com
 
+## Technical documentation
+A technical documentation in french is available in `/Doc`.
+
 ## prerequisites
 - Composer
 - MariaDB
