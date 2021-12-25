@@ -1,27 +1,39 @@
 # The_Looper
 
-## Prérequis
+## Description
+The objective of this project is to make a copy of a given website.
+
+The said website: https://stormy-plateau-54488.herokuapp.com
+
+## prerequisites
 - Composer
 - MariaDB
 - PHP 8
+- Sass
 
-## Configuration du projet
-- Après avoir cloné le projet il faudra faire un **composer i**.
-- Puis lancez le script **./Doc/SQL/Script.sql** dans votre moteur de base de donnée.
-- Il vous faudra ensuite paramètrer scss :
-  - Pour cela il vous faudra allez dans ``File -> Settings -> File Watcher``.
-```
-File type : SCSS style sheet
+## project configuration
+- After clonning the project, please run `composer i` in the terminal at the project root.
+- After that, please run the following SQL script in your favorite SQL editor tool. You will have to have a pre-created database as the script only create tables and test datas.
+- The project uses SCSS for the styles. You will have to compile it with sass.
+  - The command to compile: 
+    ```
+    sass View/Style/SCSS/Global.scss View/Style/CSS/Global.css
+    ```
 
-Program : sass
-Arguments : $FileName$:$ProjectFileDir$\View\Style\CSS\$FileNameWithoutExtension$.css
-Output paths to refresh : $FileName$:$ProjectFileDir$\View\Style\CSS\$FileNameWithoutExtension$.css$FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map
-```
+  - You can configure a file watcher with these parameters too
+    ```
+    File type : SCSS style sheet
 
+    Program : sass
+    Arguments : $FileName$:$ProjectFileDir$\View\Style\CSS\$FileNameWithoutExtension$.css
+    Output paths to refresh : $FileName$:$ProjectFileDir$\View\Style\CSS\$FileNameWithoutExtension$.css$FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map
+    ```
 
-## Configuration de la connexion à la base de donnée
-- Copiez le fichier **example.env.php** qui est dans le dossier **Config** et appelez le **.env.php**.
-- Changez les informations qui sont représentées par des **XXX** par les informations de votre base de données.
+## Config files
+ Please copy the `Config/.env.example.php` file and past it with the `.env.php` in the same directory. After that, please set your database connection infos in the file.
 
-## Lancement des tests
-- Pour lancer les tests nous utilisons la commande suivante : **php ./vendor/phpunit/phpunit/phpunit ./**
+## Running tests
+- To run the tests, please run the following command in your terminal at the project root: 
+  ```
+  php ./vendor/phpunit/phpunit/phpunit ./
+  ```
